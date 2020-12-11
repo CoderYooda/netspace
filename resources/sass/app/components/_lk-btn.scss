@@ -1,0 +1,23 @@
+.lk__btn {
+  background: #0084D9;
+  border-radius: 4px;
+  transition: all .2s;
+  padding: 16px 20px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 6px rgba(9, 154, 248, 0.25));
+    background: #099AF8;
+  }
+
+  &:focus {
+    outline: none;
+    background: #007BCA;
+    filter: drop-shadow(0px 2px 6px rgba(0, 123, 202, 0.25));
+  }
+}

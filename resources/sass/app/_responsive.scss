@@ -1,0 +1,183 @@
+@media (max-width: 1430px) {
+    .lk .container {
+        margin: 0 60px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .login-form {
+        max-width: 416px;
+        margin: 0 0 0 auto;
+    }
+    .login__logo-img {
+        max-width: 70%;
+    }
+    .login__logo {
+        margin-bottom: 30px;
+    }
+    .login__left {
+        padding-right: 40px;
+    }
+}
+@media (max-width: 1140px) {
+    .lk__header-btn {
+        display: block;
+        margin-left: 30px;
+    }
+    .lk__content {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .lk__menu {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .lk__offset {
+        margin: 20px 0 !important;
+    }
+    .lk__menu-list {
+        display: flex;
+        width: 80%;
+    }
+    .lk__user {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        padding: 30px 20px 15px 20px;
+        margin-top: 20px;
+    }
+    .lk__logout {
+        border-radius: 0;
+        width: 20%;
+        font-size: 12px;
+        padding: 20px 30px;
+        margin-top: 0;
+        justify-content: center;
+    }
+    .lk__logout::before, .lk__menu-item.active::after {
+        display: none;
+    }
+    .lk__white {
+        padding: 20px;
+    }
+    .lk__user-item {
+        width: 33%;
+        display: flex;
+        margin-bottom: 10px;
+        align-items: center;
+
+        &:last-child {
+            display: none;
+        }
+    }
+    .lk__user-label {
+        margin-bottom: 0;
+        margin-right: 8px;
+    }
+    .lk__h2 {
+        font-size: 20px;
+    }
+    .lk__h3 {
+        font-size: 16px;
+    }
+    .lk__menu-item {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .login__title {
+        font-size: 20px;
+    }
+    .login__right {
+        padding-left: 40px;
+    }
+    .login-container {
+        margin: 0 50px;
+    }
+}
+@media (min-width: 1140px) {
+    .lk__header-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .lk__user-item {
+        width: 50%;
+    }
+    .lk__menu-item {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 17px;
+    }
+    .lk .container {
+        margin: 0 30px;
+    }
+    .lk__contacts-label {
+        font-size: 12px;
+    }
+    .lk__contacts-link {
+        font-size: 12px;
+    }
+    .lk__contacts-item::before {
+        display: none;
+    }
+}
+
+@media (max-height: 740px) {
+    .login {
+        height: auto;
+        margin-top: 60px;
+    }
+    .login__logo-img {
+        max-width: 60%;
+    }
+    .login__logo {
+        margin-bottom: 20px;
+    }
+    .login__title {
+        font-size: 20px;
+    }
+    .login__title-label {
+        font-size: 14px;
+    }
+    .login-header {
+        margin-top: 30px;
+    }
+    .login-footer {
+        padding-bottom: 20px;
+    }
+    .login-bg {
+        width: 40%;
+    }
+}
+@media (max-height: 600px) {
+    .login-bg {
+        width: 40%;
+    }
+    .login__left {
+        width: 38%;
+    }
+    .login-form .label {
+        font-size: 2.6vh;
+        line-height: 130%;
+    }
+    .login-form .personal-data {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .login-form .form__group {
+        margin-bottom: 30px;
+    }
+    .login__btn {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+    .login {
+        margin-top: 30px;
+    }
+}
