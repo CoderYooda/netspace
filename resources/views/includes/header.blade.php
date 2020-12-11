@@ -19,6 +19,8 @@
 
             <div class="row lk__contacts">
 
+                <a href="{{ route('login') }}" target="_blank">Страница входа</a>
+
                 <div class="lk__contacts-item">
                     <div>
                         <div class="lk__contacts-label">Подключение</div>

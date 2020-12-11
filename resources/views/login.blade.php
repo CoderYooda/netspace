@@ -6,15 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="/favicon.ico">
-    <meta name="csrf-token" content="{{ csrf_token('app') }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>Войти</title>
 
-    {% block stylesheets %}
-
-        {{- encore_entry_link_tags('app') -}}
-
-    {% endblock %}
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
 
 </head>
 <body class="login-wrap">
@@ -25,14 +21,14 @@
 
         <div class="login-container login-content">
             <div class="row login-header">
-                <a href="{{ path('home') }}" class="login-header__link login-header__home" title="На главную">На главную</a>
+                <a href="#" class="login-header__link login-header__home" title="На главную">На главную</a>
                 <a href="tel:+74722250911" class="login-header__link login-header__phone">+7 4722 250 911</a>
             </div>
 
             <div class="login">
                 <div class="row login_row">
                     <div class="login__left">
-                        <a href="{{ path('home') }}" class="login__logo">
+                        <a href="#" class="login__logo">
                             <img src="/images/logo/logo-big.jpg" alt="" class="login__logo-img">
                         </a>
                         <h1 class="login__title">
@@ -73,7 +69,7 @@
 
                             <p class="personal-data">
                                 Нажимая кнопку «Войти», Вы принимаете условия
-                                <a href="{{ path('policy') }}" class="personal-data__link" target="_blank" rel="noopener">
+                                <a href="#" class="personal-data__link" target="_blank" rel="noopener">
                                     пользовательского соглашения и политики конфиденциальности
                                 </a>
                             </p>
@@ -85,37 +81,10 @@
         </div>
 
 
-        <div class="login-container login-footer">
-            <div class="row">
-                <div class="login-footer__copyright">© {{ 'now' | date('Y') }} NetSpace</div>
-
-                <div class="login-footer__webstyle">
-                    <a href="https://webstyle.top/prodvizhenie-sajtov"
-                       class="login-footer__webstyle-link"
-                       title="Продвижение сайтов Белгород"
-                       target="_blank"
-                       rel="noopener"
-                    >
-                        Продвижение сайтов
-                    </a>
-                    <a href="https://webstyle.top/"
-                       class="login-footer__webstyle-link"
-                       title="Создание сайтов Белгород"
-                       target="_blank"
-                       rel="noopener"
-                    >
-                        <img src="/images/logo/webstyle_black.png" alt="Создание сайтов Webstyle" class="login-footer__webstyle-img">
-                    </a>
-                </div>
-            </div>
-        </div>
+        @include('includes.footer')
     </div>
 
-{% block javascripts %}
-
-    {{ encore_entry_script_tags('app') }}
-
-{% endblock %}
+    <script async src="{{ mix('js/app.js') }}"></script>
 
 </body>
 </html>
