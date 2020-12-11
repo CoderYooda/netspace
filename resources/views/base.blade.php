@@ -17,179 +17,124 @@
 
 <div class="wrapper">
 
-    {{-- header --}}
-
-        @include('includes.header')
-
-    {{-- end header --}}
-
+    @include('includes.header')
 
     <div class="lk__offset">
         <div class="container">
             <div class="row lk__row">
-                <div class="lk__menu">
 
-                    {{-- tabs --}}
-                    <div class="lk__menu-list">
-                        <div class="lk__menu-item lk__menu-item_first">Лицевой счет</div>
-                        <div class="lk__menu-item active">Добровольная блокировка</div>
-                        <div class="lk__menu-item lk__menu-item_last">Статистика описаний</div>
-                    </div>
-                    {{-- end tabs --}}
+                @include('includes.sidebar')
 
-                    <div class="lk__logout">
-                        Выйти
-                    </div>
+                <div class="lk__content">
 
-                    {{-- user info --}}
-
-                        @include('includes.user_info')
-
-                    {{-- end user info --}}
-                </div>
-
-                {{-- content --}}
-
-                <div class="lk__content lk__white">
-
-                    <div class="lk__main-info lk__time-offset">
-                        <h1 class="lk__h2">Текущий тариф</h1>
-
-                        <p class="lk__main-info-text">
-                            Таврово-800: 800.0 руб.
-                        </p>
-
-                        <button class="lk__btn">Поменять тариф</button>
-                    </div>
-
-                    <div class="lk__personal-account lk__time-offset">
-                        <h1 class="lk__h2">Лицевой счет</h1>
-
-                        <table class="lk__table">
-                            <tr>
-                                <td>Номер счета</td>
-                                <td>83877373</td>
-                            </tr>
-                            <tr>
-                                <td>Баланс</td>
-                                <td>999</td>
-                            </tr>
-                            <tr>
-                                <td>Договор</td>
-                                <td>BH848DJJ</td>
-                            </tr>
-                        </table>
-
-                        <h2 class="lk__h3">Состояние абонента</h2>
-
-                        <table class="lk__table">
-                            <tr>
-                                <td>Статус</td>
-                                <td>Новый</td>
-                            </tr>
-                            <tr>
-                                <td>Тариф</td>
-                                <td>Таврово-800: 800.0 руб.</td>
-                            </tr>
-                            <tr>
-                                <td>Дата активации</td>
-                                <td>2020-11-20 17:44:05.969100</td>
-                            </tr>
-                        </table>
-
-                        <h2 class="lk__h3">Расходы в текущем месяце</h2>
-
-                        <table class="lk__table">
-                            <tr>
-                                <td>Услуга из Таврово-800: Трафик (800.00 руб. Вх. 0.000 руб. Исх. 0.000 руб.)</td>
-                                <td>180,65</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="lk__block lk__time-offset">
-                        <h1 class="lk__h2">Добровольная блокировка</h1>
-
-                        <p class="lk__h4">
-                            Стоимость услуги: 0
-                        </p>
-
-                        <div class="row lk__block-info">
-                            <div class="lk__form-l3">
-                                <div class="lk__input-wrap"> {{-- .lk_input_err при ошибке --}}
-                                    <input type="text" class="lk__input">
-                                    <label class="lk__label">Начало</label>
-
-                                    <div class="lk__errors"> {{-- Добавить класс .show при ошибке --}}
-                                        Необходимо заполнить
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lk__form-l3">
-                                <div class="lk__input-wrap">
-                                    <input type="text" class="lk__input">
-                                    <label class="lk__label">Конец</label>
-                                    <div class="lk__errors">
-                                        Необходимо заполнить
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lk__form-l3">
-                                <div class="lk__input-wrap">
-                                    <button class="lk__btn lk__block-btn">Заблокировать</button>
-                                </div>
-                            </div>
+                    <div class="lk__tabs-wrap"> {{-- Эта обертка для адаптива --}}
+                        <div class="lk__tabs tabs">
+                            <div class="lk__tab">Оплата услуг</div>
+                            <div class="lk__tab active">История платежей</div>
+                            <div class="lk__tab">Добровольная блокировка</div>
+                            <div class="lk__tab lk__tab_last">Настройки</div>
                         </div>
                     </div>
 
-                    <div class="lk__block">
-                        <h1 class="lk__h2">Статистика списаний</h1>
+                    <div class="lk__tab-content-wrap">
 
-                        <p class="lk__h4">
-                            Фильтрация по датам
-                        </p>
+                        {{-- Оплата услуг --}}
+                        <div class="lk__tab-content tab-content">
 
-                        <div class="row lk__block-info">
-                            <div class="lk__form-l3">
-                                <div class="lk__input-wrap">
-                                    <input type="text" class="lk__input">
-                                    <label class="lk__label">Начало</label>
+                            <h1 class="lk__h3 lk__underline">Оплата услуг</h1>
 
-                                    <div class="lk__errors">
-                                        Необходимо заполнить
+                            <p class="lk__payment-text">
+                                Рекомендуемый платеж: <b>999 руб.</b>
+                            </p>
+
+                            <button class="lk__btn">Оплатить</button>
+                        </div>
+
+                        {{-- История платежей --}}
+                        <div class="lk__tab-content tab-content">
+
+                            <h1 class="lk__h3 lk__underline">История платежей</h1>
+
+                            <div class="row">
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap lk_input_err"> {{-- .lk_input_err при ошибке --}}
+                                        <input type="text" class="lk__input">
+                                        <label class="lk__label">Начало</label>
+
+                                        <div class="lk__errors show"> {{-- Добавить класс .show при ошибке --}}
+                                            Необходимо заполнить
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <input type="text" class="lk__input">
+                                        <label class="lk__label">Конец</label>
+                                        <div class="lk__errors">
+                                            Необходимо заполнить
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <button class="lk__btn lk__block-btn">Показать</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="lk__form-l3">
-                                <div class="lk__input-wrap">
-                                    <input type="text" class="lk__input">
-                                    <label class="lk__label">Конец</label>
-                                    <div class="lk__errors">
-                                        Необходимо заполнить
+
+                        </div>
+
+                        {{-- Добровольная блокировка --}}
+                        <div class="lk__tab-content tab-content">
+                            <h1 class="lk__h3 lk__underline">Добровольная блокировка</h1>
+
+                            <p class="lk__h4">
+                                Стоимость услуги: 0
+                            </p>
+
+                            <div class="row">
+
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <input type="text" class="lk__input">
+                                        <label class="lk__label">Начало</label>
+
+                                        <div class="lk__errors">
+                                            Необходимо заполнить
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="lk__form-l3">
-                                <div class="lk__input-wrap">
-                                    <button class="lk__btn lk__block-btn">Показать</button>
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <input type="text" class="lk__input">
+                                        <label class="lk__label">Конец</label>
+                                        <div class="lk__errors">
+                                            Необходимо заполнить
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <button class="lk__btn lk__block-btn">Заблокировать</button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
+                        {{-- Настройки --}}
+                        <div class="lk__tab-content tab-content">
+                            <h1 class="lk__h3 lk__underline">Настройки</h1>
+                        </div>
+
+                    </div>
                 </div>
 
-                {{-- end content --}}
             </div>
         </div>
     </div>
 
-
-    {{-- footer --}}
-
     @include('includes.footer')
-
-    {{-- end footer --}}
 
 </div>
 

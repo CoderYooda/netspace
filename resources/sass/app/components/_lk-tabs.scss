@@ -1,0 +1,67 @@
+.lk__tabs {
+    width: 100%;
+}
+.lk__tab {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 20px 0;
+    margin: 0 30px;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #0084D9;
+        height: 4px;
+        width: 0;
+        transition: all .2s;
+    }
+
+    &:hover {
+        color: #0084D9;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 26px;
+        right: -30px;
+        width: 1px;
+        height: 8px;
+        background: #BDBDBD;
+        display: inline-block;
+    }
+}
+.lk__tab_last {
+    &::after {
+        display: none;
+    }
+}
+.lk__tab-content-wrap {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px 30px;
+    width: 100%;
+}
+.lk__tab-content {
+    margin-bottom: 30px;
+}
+
+//----
+
+.lk__tab.active {
+    color: #0084D9;
+
+    &::before {
+        width: 100%;
+    }
+}

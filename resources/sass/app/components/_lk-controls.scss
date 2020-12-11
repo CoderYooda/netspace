@@ -51,8 +51,7 @@
   letter-spacing: 0.02em;
   color: #F7341F;
   transition: all .2s;
-  margin-top: -10px;
-  margin-bottom: 15px;
+  margin: 5px 0 15px 20px;
   position: absolute;
 
   opacity: 0;
@@ -77,4 +76,8 @@
     padding-right: 0;
     padding-left: 15px;
   }
+}
+.lk__underline {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ededed;
 }

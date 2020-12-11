@@ -4,6 +4,23 @@
     }
 }
 
+@media (max-width: 1202px) {
+    .lk__tab {
+        font-size: 13px;
+        margin: 0 15px;
+
+        &::after {
+            right: -15px;
+        }
+    }
+    .lk__h3 {
+        font-size: 18px;
+    }
+    .lk__info-item {
+        display: block;
+    }
+}
+
 @media (max-width: 1300px) {
     .login-form {
         max-width: 416px;
@@ -24,17 +41,28 @@
         display: block;
         margin-left: 30px;
     }
-    .lk__content {
-        width: 100%;
-        margin-top: 20px;
+    .lk__offset {
+        margin: 40px 0 !important;
+    }
+    .lk__username::before {
+        width: 35px;
+        height: 35px;
+        top: 4px;
+    }
+    .lk__username {
+        font-size: 13px;
+        padding-left: 50px;
+    }
+    .lk__surname {
+        font-size: 16px;
     }
     .lk__menu {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
     }
-    .lk__offset {
-        margin: 20px 0 !important;
+    .lk__info-name {
+        width: 100%;
     }
     .lk__menu-list {
         display: flex;
@@ -47,17 +75,6 @@
         flex-flow: row wrap;
         padding: 30px 20px 15px 20px;
         margin-top: 20px;
-    }
-    .lk__logout {
-        border-radius: 0;
-        width: 20%;
-        font-size: 12px;
-        padding: 20px 30px;
-        margin-top: 0;
-        justify-content: center;
-    }
-    .lk__logout::before, .lk__menu-item.active::after {
-        display: none;
     }
     .lk__white {
         padding: 20px;
@@ -92,11 +109,44 @@
     .login__title {
         font-size: 20px;
     }
+    .lk__contacts-link {
+        font-size: 16px;
+    }
     .login__right {
         padding-left: 40px;
     }
     .login-container {
         margin: 0 50px;
+    }
+    .lk__sidebar {
+        width: 100%;
+        padding: 20px 30px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .lk__username {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .lk__content {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 0;
+    }
+    .lk__info {
+        display: flex;
+        justify-content: space-between;
+    }
+    .lk__logout {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        width: auto;
+        padding: 15px;
+        margin: 0;
+    }
+    .lk__offset {
+        margin: 20px 0 !important;
     }
 }
 @media (min-width: 1140px) {

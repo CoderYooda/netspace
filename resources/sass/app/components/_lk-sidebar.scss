@@ -1,0 +1,83 @@
+.lk__sidebar {
+    background: #fff;
+    border-radius: 8px;
+    width: 26%;
+    padding: 32px 30px;
+    height: 100%;
+}
+.lk__surname {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.lk__username {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    padding-left: 60px;
+    position: relative;
+    padding-bottom: 26px;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 25px;
+
+    &::before {
+        content: "";
+        background: url("/images/user.jpg") no-repeat;
+        background-size: 100%;
+        display: inline-block;
+        width: 38px;
+        height: 38px;
+        position: absolute;
+        top: 7px;
+        left: 0;
+    }
+}
+.lk__info-item {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+    display: flex;
+}
+.lk__info-name {
+    font-weight: 600;
+    width: 50%;
+}
+.lk__logout {
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+    padding: 12px 0;
+    background: none;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #BDBDBD;
+    margin-top: 45px;
+    transition: all .1s;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        background: url("/images/icons/logout.svg") no-repeat;
+        background-size: 100%;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 12px;
+        transition: all .1s;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: #007BCA;
+    }
+    &:hover::before {
+        background: url("/images/icons/logout-hov.svg") no-repeat;
+        background-size: 100%;
+    }
+}
