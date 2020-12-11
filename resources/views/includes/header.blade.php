@@ -8,10 +8,8 @@
             <div class="row lk__contacts">
 
                 @desktop
-                <a href="{{ route('login') }}" target="_blank">Страница входа</a>
+                    <a href="{{ route('login') }}" target="_blank">Страница входа</a>
                 @enddesktop
-
-
 
                 <div class="lk__contacts-item">
                     <div>

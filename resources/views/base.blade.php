@@ -28,11 +28,13 @@
                 <div class="lk__content">
 
                     <div class="lk__tabs-wrap"> {{-- Эта обертка для адаптива --}}
+
+                        {{-- Классы tabs, tab, tab-content не имеют стилей можно использовать для скрипта --}}
                         <div class="lk__tabs tabs">
-                            <div class="lk__tab">Оплата услуг</div>
-                            <div class="lk__tab active">История платежей</div>
-                            <div class="lk__tab">Добровольная блокировка</div>
-                            <div class="lk__tab lk__tab_last">Настройки</div>
+                            <div class="lk__tab tab">Оплата услуг</div>
+                            <div class="lk__tab tab active">История платежей</div>
+                            <div class="lk__tab tab">Добровольная блокировка</div>
+                            <div class="lk__tab tab lk__tab_last">Настройки</div>
                         </div>
                     </div>
 
