@@ -45,46 +45,201 @@
 
                             <h1 class="lk__h3 lk__underline">Оплата услуг</h1>
 
-                            <p class="lk__payment-text">
-                                Рекомендуемый платеж: <b>999 руб.</b>
-                            </p>
+                            <div class="lk__payment-form">
+                                <div class="form-group">
+                                    <label class="lk__label">Плательщик</label>
+                                    <input type="text" class="lk__input" value="Гончаренко Евгений Сергеевич">
+                                </div>
+                                <div class="form-group">
+                                    <label class="lk__label">Телефон</label>
+                                    <input type="tel" class="lk__input">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn lk__payment-btn sber_icon">Оплатить через СБЕР</button>
+                                </div>
 
-                            <button class="lk__btn">Оплатить</button>
+                            </div>
                         </div>
 
-                        {{-- История платежей --}}
+
+                        {{-- История списаний --}}
                         <div class="lk__tab-content tab-content">
 
-                            <h1 class="lk__h3 lk__underline">История платежей</h1>
+                            <h1 class="lk__h3 lk__underline">История списаний</h1>
 
-                            <div class="row">
+                            <div class="row lk__form">
                                 <div class="lk__form-l3">
-                                    <div class="lk__input-wrap lk_input_err"> {{-- .lk_input_err при ошибке --}}
-                                        <input type="text" class="lk__input">
+                                    <div class="lk__input-wrap">
                                         <label class="lk__label">Начало</label>
+                                        <input type="text" class="lk__input">
 
-                                        <div class="lk__errors show"> {{-- Добавить класс .show при ошибке --}}
-                                            Необходимо заполнить
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="lk__form-l3">
                                     <div class="lk__input-wrap">
-                                        <input type="text" class="lk__input">
                                         <label class="lk__label">Конец</label>
+                                        <input type="text" class="lk__input">
                                         <div class="lk__errors">
                                             Необходимо заполнить
                                         </div>
                                     </div>
                                 </div>
                                 <div class="lk__form-l3">
-                                    <div class="lk__input-wrap">
-                                        <button class="lk__btn lk__block-btn">Показать</button>
-                                    </div>
+                                    <button class="lk__btn lk__block-btn">Отфильтровать</button>
                                 </div>
                             </div>
 
+                            <div class="lk__form-result">
+                                <table class="lk__table">
+                                    <thead>
+                                        <tr>
+                                            <td>Услуга</td>
+                                            <td>Месяц</td>
+                                            <td>Год</td>
+                                            <td>Цена</td>
+                                            <td>Единица измерения</td>
+                                            <td>Сумма</td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Услуга из свой: Трафик (1000,00 руб. вх. 0,000 руб. исх. 0,000 руб.)
+                                            </td>
+                                            <td>август</td>
+                                            <td>2020</td>
+                                            <td class="lk__table-price">180 р.</td>
+                                            <td>300,000 Мбит</td>
+                                            <td class="lk__table-price">10000 р.</td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+
                         </div>
+
+
+
+                        {{-- История платежей --}}
+                        <div class="lk__tab-content tab-content">
+
+                            <h1 class="lk__h3 lk__underline">История платежей</h1>
+
+                            <div class="row lk__form">
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <label class="lk__label">Начало</label>
+                                        <input type="text" class="lk__input">
+                                    </div>
+                                </div>
+                                <div class="lk__form-l3">
+                                    <div class="lk__input-wrap">
+                                        <label class="lk__label">Конец</label>
+                                        <input type="text" class="lk__input">
+                                    </div>
+                                </div>
+                                <div class="lk__form-l3">
+                                    <button class="lk__btn lk__block-btn">Отфильтровать</button>
+                                </div>
+                            </div>
+
+                            <div class="lk__form-result">
+                                <table class="lk__table">
+                                    <thead>
+                                    <tr>
+                                        <td>Номер операции</td>
+                                        <td>Дата операции</td>
+                                        <td>Сумма</td>
+                                        <td>Описание</td>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            16267950
+                                        </td>
+                                        <td>2020-10-30 00:00:00</td>
+                                        <td>10 000,00</td>
+                                        <td>Текст</td>
+                                    </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+
+
+                        {{-- Обещанный платеж --}}
+                        <div class="lk__tab-content tab-content">
+                            <h1 class="lk__h3">Обещанный платеж</h1>
+
+                            <p class="lk__text-style">
+                                <b>Действие вашего тарифа приостановлено</b>
+                            </p>
+                            <p class="lk__text-style">
+                                Активирована услуга “Доверительный платеж”
+                            </p>
+
+                            <div class="lk__promised-offset">
+                                <p class="lk__text-style"><b>Внимание!</b></p>
+                                <p class="lk__text-style">
+                                    <b>Услуга “Доверительный платеж” будет отключена через</b>
+                                    <span class="lk__text-violet">3 дня</span>
+                                </p>
+                                <p class="lk__text-style">Пожалуйста пополните баланс</p>
+                            </div>
+
+                            <button class="btn lk__payment-btn sber_icon lk__promised-btn">Оплатить через СБЕР</button>
+                        </div>
+
+                        <div class="lk__tab-content tab-content">
+                            <h1 class="lk__h3">Личные данные</h1>
+
+                             <div class="row lk__personal-info">
+                                <div class="lk__form-l5">
+                                    <div class="lk__input-wrap">
+                                        <label class="lk__label">Телефон</label>
+                                        <input type="tel" class="lk__input">
+                                    </div>
+                                </div>
+                                 <div class="lk__form-l5">
+                                     <div class="lk__input-wrap">
+                                         <label class="lk__label">Имя</label>
+                                         <input type="text" class="lk__input">
+                                     </div>
+                                 </div>
+                                 <div class="lk__form-l5">
+                                     <div class="lk__input-wrap">
+                                         <label class="lk__label">E-mail</label>
+                                         <input type="email" class="lk__input">
+                                     </div>
+                                 </div>
+                                 <div class="lk__form-l5">
+                                     <div class="lk__input-wrap">
+                                         <label class="lk__label">Фамилия</label>
+                                         <input type="text" class="lk__input">
+                                     </div>
+                                 </div>
+                                 <div class="lk__form-l5">
+                                     <div class="lk__input-wrap">
+                                         <label class="lk__label">Адрес</label>
+                                         <input type="text" class="lk__input">
+                                     </div>
+                                 </div>
+                                 <div class="lk__form-l5">
+                                     <div class="lk__input-wrap">
+                                         <label class="lk__label">Отчество</label>
+                                         <input type="text" class="lk__input">
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+
 
                         {{-- Добровольная блокировка --}}
                         <div class="lk__tab-content tab-content">

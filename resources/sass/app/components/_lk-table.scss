@@ -1,13 +1,26 @@
 .lk__table {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 30px;
+  margin: 0 -16px;
   font-size: 14px;
-  max-width: 900px;
 
   td {
-    border: 1px solid #d5d5d5;
-    padding: 10px;
-    width: 50%;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    color: #4F4F4F;
+    padding: 16px;
   }
+  tr {
+    border-bottom: 1px solid #E0E0E0;
+  }
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+  thead td {
+    font-weight: bold;
+  }
+}
+.lk__table-price {
+  white-space: nowrap;
 }

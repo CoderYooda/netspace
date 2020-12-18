@@ -183,13 +183,26 @@
   cursor: pointer;
 }
 .eye {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url("/images/icons/eye.svg") no-repeat;
+    background-size: 100%;
+    transition: all .2s;
+
+    &:hover {
+        background: url("/images/icons/eye-hov.svg") no-repeat;
+        background-size: 100%;
+    }
 }
 .eye_closed {
   background: url("/images/icons/eye_closed.svg") no-repeat;
   background-size: 100%;
+
+    &:hover {
+        background: url("/images/icons/eye_closed-hov.svg") no-repeat;
+        background-size: 100%;
+    }
 }
 .remember-me {
   margin-bottom: 30px;

@@ -52,7 +52,7 @@
                                 <div class="input_err">error</div>
 
                                 <div class="eyes">
-                                    <div class="eye eye_closed"></div>
+                                    <div class="eye eye_closed"></div> {{-- .eye_closed - закрытый глаз --}}
                                 </div>
                             </div>
 
