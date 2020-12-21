@@ -58,11 +58,11 @@ class test extends Command
         //curl -XPOST -d 'method1=objects.get&arg1={"login":"BILL0000664"}' http://192.168.200.92:8082/rest_api/v2/Users/ -D -
 
         $client = new Client();
-        $res = $client->post($endpoint, ['method1' => 'objects.get&arg1', 'arg1' => '{"login":"BILL0000664"}']);
+        $res = $client->post($endpoint, ['form_params' =>['method1' => 'objects.get', 'arg1' => '{"login":"BILL0000664"}']]);
 //        echo $res->getStatusCode(); // 200
 //        echo $res->getBody();
 
 
-        dd($res->getBody());
+        dd(json_decode($res->getBody()));
     }
 }
