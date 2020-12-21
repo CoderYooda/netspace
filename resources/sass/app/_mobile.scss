@@ -1,6 +1,36 @@
+@media (min-width: 768px) {
+    .lk__lable-name-mobile {
+        display: none;
+    }
+}
 @media (max-width: 768px) {
     .login-bg {
         width: 100%;
+    }
+    .lk__lable-name-mobile {
+        font-weight: 600;
+        color: #404040;
+        margin-right: 10px;
+    }
+    .lk__promised-offset {
+        margin-top: 20px;
+    }
+    .lk__personal-info {
+        padding: 0;
+    }
+    .lk__lable-name {
+        width: 100%;
+    }
+    .lk__table td {
+        padding: 10px;
+        display: flex;
+        width: 100%;
+    }
+    .lk__table tr {
+        border-bottom: 1px solid #E0E0E0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
     }
     .login-header {
         margin-top: 20px;
@@ -9,6 +39,17 @@
         width: 100%;
         padding-right: 0;
         text-align: center;
+    }
+    .lk__table {
+        margin: 0;
+        border: 1px solid #ddd;
+
+        thead {
+            display: none;
+        }
+    }
+    .lk__logout {
+        padding: 0 20px 0 15px;
     }
     .login__logo {
         margin-bottom: 0;
@@ -71,6 +112,24 @@
     .lk .container {
         margin: 0 15px;
     }
+    .lk__payment-form, .lk__form, .lk__personal-info {
+        max-width: 100%;
+    }
+    .lk__password-reset .lk__errors, .lk__payment-form .lk__errors {
+        top: initial;
+        right: initial;
+        transform: translateX(0);
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+    .lk__table td {
+        padding: 10px;
+    }
+    .lk__personal-info {
+        padding: 0;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 655px) {
@@ -78,14 +137,92 @@
         overflow: hidden;
     }
     .lk__tabs {
-        overflow: auto;
         white-space: nowrap;
+        overflow: auto;
+    }
+    .lk__tab {
+        margin: 0 10px 0 0;
+        background: #fff;
+        border-radius: 20px;
+        padding: 15px 20px;
+        font-size: 12px;
+    }
+    .lk__tab.p_rel {
+        background: none;
+        padding: 0;
+    }
+    .lk__tab-mobile {
+        display: none;
+    }
+    .lk__tab_icon {
+        display: none;
+    }
+    .tab-dropdown_mask {
+        position: initial;
+        display: inline-block;
+        padding: 0;
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+    .tab-dropdown {
+        background: none;
+        display: flex;
+        padding: 0;
+        box-shadow: none;
+        white-space: nowrap;
+    }
+    .lk__tab:hover {
+        color: #333;
+    }
+    .lk__tab:hover::before {
+        display: none;
+    }
+    .tab.active {
+        background: #8b3db1;
+        color: #fff;
+    }
+    .lk__tab.active::before {
+        display: none;
+    }
+    .tab-dropdown__item {
+        font-weight: 600;
+        font-size: 12px;
+        color: #333;
+        padding: 15px 20px;
+        margin: 0 10px 0 0;
+        background: #fff;
+        border-radius: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .lk__tab::after {
+        display: none;
+    }
+    .lk__logout {
+        font-size: 12px;
     }
 }
 
 @media (max-width: 650px) {
     .lk-hide {
         display: none;
+    }
+    .lk__form-l5 {
+        padding-right: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .lk__password-reset {
+        max-width: 100%;
+    }
+    .lk__payment-btn {
+        font-size: 12px;
+    }
+    .lk__personal-info {
+        padding: 0;
     }
     .lk__mobile-menu {
         position: fixed;
@@ -107,6 +244,9 @@
         display: inline-block;
         margin-bottom: 20px;
     }
+    .lk__block-btn {
+        margin-top: 0;
+    }
     .lk__mobile-logo-img {
         max-width: 150px;
     }
@@ -114,6 +254,9 @@
         font-size: 15px;
         font-weight: 500;
         padding: 15px 0;
+    }
+    .lk__form-result {
+        margin-top: 0;
     }
     .lk__mobile-logout {
         margin: 10px -30px 0 -15px;
@@ -170,9 +313,6 @@
     .lk__tab-content-wrap {
         padding: 20px;
     }
-    .lk__sidebar {
-        padding: 20px;
-    }
     .lk__form-l3 {
         width: 100%;
         padding-right: 0;
@@ -182,14 +322,92 @@
         padding-right: 0;
         padding-left: 0;
     }
+    .btn_text_hide {
+        display: none;
+    }
+    .lk__logout::before {
+        width: 20px;
+        height: 20px;
+        margin-right: 0;
+    }
+    .lk__contacts {
+        padding-right: 40px;
+    }
 }
 
 @media (min-width: 650px) {
     .lk__open-menu, .lk__mobile-menu {
         display: none;
     }
-
 }
+
+@media (max-width: 515px) {
+    .lk__contacts {
+        display: block;
+    }
+    .lk__contacts-label {
+        display: none;
+    }
+    .lk__payment-btn {
+        padding: 9px 15px;
+    }
+    .lk__sidebar-btn {
+        padding: 10px 15px !important;
+    }
+    .lk__username {
+        border-bottom: none;
+        width: 60%;
+    }
+}
+
+@media (max-width: 450px) {
+    .lk__username {
+        width: 100%;
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+    }
+    .lk__sidebar-btn-sber {
+        position: initial;
+        width: 100%;
+        order: 1;
+        margin-bottom: 0;
+    }
+    .lk__logout {
+        padding: 0 15px;
+    }
+    .lk__contacts {
+        padding-right: 35px;
+    }
+    .lk__sidebar-btn {
+        width: 100% !important;
+        margin: 0;
+    }
+    .lk__sidebar-footer {
+        padding: 0;
+    }
+    .lk__sidebar-btn-offset {
+        margin-top: 10px;
+    }
+    .lk__payment-btn {
+        width: 100%;
+    }
+    .lk__info-item {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .lk__sidebar-footer {
+        display: none;
+    }
+    .lk__sidebar-wrap {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .lk__sidebar {
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 419px) {
     .button-section__text::before {
         top: 15px;
@@ -215,6 +433,21 @@
     }
     .lk__user-btn {
         padding: 16px 10px;
+    }
+}
+@media (max-width: 370px) {
+    .lk__logout::before {
+        width: 16px;
+        height: 16px;
+    }
+    .lk__logout {
+        padding: 0 12px;
+    }
+    .lk__contacts {
+        padding-right: 16px;
+    }
+    .lk__header-logo-img {
+        max-width: 110px;
     }
 }
 @media (max-width: 350px) {

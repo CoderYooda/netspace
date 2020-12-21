@@ -1,12 +1,38 @@
-@media (max-width: 1430px) {
+@media (max-width: 1600px) {
     .lk .container {
         margin: 0 60px;
     }
 }
 
+@media (max-width: 1300px) {
+    .lk .container {
+        margin: 0 30px;
+    }
+    .lk__sidebar-wrap {
+        width: 28%;
+    }
+    .lk__content {
+        width: 72%;
+    }
+    .lk__offset {
+        margin: 30px 0 60px 0 !important;
+    }
+    .lk__logout {
+        margin-right: -30px;
+        padding: 34px 54px 34px 24px;
+    }
+    .mobile_hide {
+        display: none;
+    }
+}
+@media (min-width: 1300px) {
+    .mobile_show {
+        display: none;
+    }
+}
+
 @media (max-width: 1202px) {
     .lk__tab {
-        font-size: 13px;
         margin: 0 15px;
 
         &::after {
@@ -40,9 +66,6 @@
     .lk__header-btn {
         display: block;
         margin-left: 30px;
-    }
-    .lk__offset {
-        margin: 40px 0 !important;
     }
     .lk__username::before {
         width: 35px;
@@ -97,7 +120,7 @@
         font-size: 20px;
     }
     .lk__h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
     .lk__menu-item {
         text-align: center;
@@ -120,7 +143,7 @@
     }
     .lk__sidebar {
         width: 100%;
-        padding: 20px 30px;
+        padding: 0;
         position: relative;
         margin-bottom: 20px;
     }
@@ -131,7 +154,7 @@
     .lk__content {
         width: 100%;
         padding-left: 0;
-        margin-top: 0;
+        margin-top: 20px;
     }
     .lk__info {
         display: flex;
@@ -139,14 +162,62 @@
     }
     .lk__logout {
         position: absolute;
-        top: 15px;
-        right: 20px;
+        top: 0;
+        right: 0;
         width: auto;
-        padding: 15px;
+        padding: 0 30px 0 15px;
+        align-items: center;
+        display: flex;
         margin: 0;
     }
     .lk__offset {
         margin: 20px 0 !important;
+    }
+    .lk__header {
+        padding: 12px 0;
+    }
+    .lk__contacts {
+        padding-right: 90px;
+    }
+    .lk__contacts-item {
+        margin-right: 20px;
+    }
+    .lk__sidebar-wrap {
+        width: 100%;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        position: relative;
+    }
+    .lk__sidebar-btn {
+        width: 50% !important;
+        margin: 0px -10px;
+        padding: 13px 30px !important;
+        border: 1px solid #ebebeb;
+    }
+    .lk__payment-btn {
+        width: auto;
+        padding: 10px 30px;
+    }
+    .lk__sidebar-btn-sber {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        z-index: 99;
+    }
+    .lk__tabs-wrap {
+        margin-bottom: 20px;
+    }
+    .lk__sidebar-balance {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .lk__sidebar-footer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0 10px;
     }
 }
 @media (min-width: 1140px) {

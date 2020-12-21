@@ -10,20 +10,21 @@
     margin: 0 30px;
     position: relative;
     cursor: pointer;
+    color: #333;
 
     &::before {
         content: "";
         position: absolute;
         bottom: 0;
         left: 0;
-        background: #0084D9;
+        background: #8B3DB1;
         height: 4px;
         width: 0;
         transition: all .2s;
     }
 
     &:hover {
-        color: #0084D9;
+        color: #8B3DB1;
     }
 
     &:hover::before {
@@ -51,6 +52,7 @@
     border-radius: 8px;
     padding: 40px 30px;
     width: 100%;
+    height: 100%;
 }
 .lk__tab-content {
     margin-bottom: 30px;
@@ -59,9 +61,76 @@
 //----
 
 .lk__tab.active {
-    color: #0084D9;
+    color: #8B3DB1;
 
     &::before {
         width: 100%;
     }
+
+    .lk__tab_icon {
+        background: url("/images/icons/arrow_hov.svg") no-repeat;
+        background-size: 100%;
+    }
+}
+
+.lk__tab_icon {
+    content: "";
+    background: url("/images/icons/arrow.svg") no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 12px;
+    position: relative;
+    top: 1px;
+    transition: all .2s;
+}
+.lk__tab-mobile {
+    display: inline-block;
+}
+
+.lk__tab:hover {
+    .lk__tab_icon {
+        transform: rotate(180deg);
+        background: url("/images/icons/arrow_hov.svg") no-repeat;
+        background-size: 100%;
+    }
+    .tab-dropdown_mask {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+.tab-dropdown_mask {
+    position: absolute;
+    top: 44px;
+    left: -16px;
+    padding: 15px;
+
+    transform: scale(0.9);
+    transition: all .2s;
+    opacity: 0;
+    visibility: hidden;
+}
+.tab-dropdown {
+    background: #fff;
+    padding: 18px 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 0 6px 6px 6px;
+    white-space: nowrap;
+}
+.tab-dropdown__item {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #4F4F4F;
+    padding: 6px 0;
+
+    &:hover {
+        color: #8B3DB1;
+    }
+}
+.lk__tabs-wrap {
+    margin-bottom: 32px;
 }

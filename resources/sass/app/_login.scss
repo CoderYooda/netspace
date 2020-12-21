@@ -189,21 +189,21 @@
     background: url("/images/icons/eye.svg") no-repeat;
     background-size: 100%;
     transition: all .2s;
-
-    &:hover {
-        background: url("/images/icons/eye-hov.svg") no-repeat;
-        background-size: 100%;
-    }
 }
 .eye_closed {
   background: url("/images/icons/eye_closed.svg") no-repeat;
   background-size: 100%;
-
-    &:hover {
-        background: url("/images/icons/eye_closed-hov.svg") no-repeat;
-        background-size: 100%;
-    }
 }
 .remember-me {
   margin-bottom: 30px;
+}
+.eyes:hover {
+  .eye {
+    background: url("/images/icons/eye-hov.svg") no-repeat;
+    background-size: 100%;
+  }
+  .eye_closed {
+    background: url("/images/icons/eye_closed-hov.svg") no-repeat;
+    background-size: 100%;
+  }
 }

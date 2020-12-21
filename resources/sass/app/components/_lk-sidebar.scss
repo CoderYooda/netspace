@@ -1,9 +1,18 @@
 .lk__sidebar {
     background: #fff;
     border-radius: 8px;
-    width: 26%;
+    width: 100%;
     padding: 32px 30px;
+    margin-bottom: 32px;
+}
+.lk__sidebar-wrap {
+    width: 26%;
     height: 100%;
+}
+.lk__sidebar-btn-sber {
+    background: #8B3DB1 !important;
+    color: #fff !important;
+    margin-bottom: 32px;
 }
 .lk__surname {
     font-weight: 800;
@@ -39,6 +48,7 @@
     letter-spacing: 0.02em;
     margin-bottom: 15px;
     display: flex;
+    color: #4F4F4F;
 }
 .lk__info-name {
     font-weight: 600;
@@ -47,14 +57,13 @@
 .lk__logout {
     font-weight: bold;
     display: flex;
-    width: 100%;
-    padding: 12px 0;
-    background: none;
+    height: 100%;
+    background: #F1F3F5;
+    padding: 34px 24px;
     border: none;
     font-size: 14px;
     letter-spacing: 0.02em;
-    color: #BDBDBD;
-    margin-top: 45px;
+    color: #333333;
     transition: all .1s;
     cursor: pointer;
 
@@ -66,7 +75,6 @@
         width: 16px;
         height: 16px;
         margin-right: 12px;
-        transition: all .1s;
     }
 
     &:focus {
@@ -74,10 +82,39 @@
     }
 
     &:hover {
-        color: #007BCA;
+        color: #8B3DB1;
     }
     &:hover::before {
         background: url("/images/icons/logout-hov.svg") no-repeat;
         background-size: 100%;
     }
+}
+.lk__sidebar-balance {
+    border-top: 1px dashed #828282;
+    padding-top: 24px;
+    margin-top: 24px;
+}
+.lk__sidebar-btn-offset {
+    margin-top: 16px;
+}
+.lk__sidebar-btn {
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%), #F2F2F2;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+.lk__info-status::after {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: 6px;
+    position: relative;
+    top: -2px;
+}
+.lk__info-status.active::after {
+    background: #21C63E;
+}
+.lk__info-status.no_active::after {
+    background: #E91C1C;
 }
