@@ -34,7 +34,7 @@ class test extends Command
 //        $content = $response->getBody();
         //curl -XPOST -d 'method1=objects.filter&arg1={"abonent__pk":"1"}' 'http://192.168.200.92:8082/rest_api/v2/Users/' -D -
 
-        $endpoint = "http://192.168.200.92:8082/system_api";
+        $endpoint = "http://192.168.200.92:8082/rest_api/v2/Users/";
 //        $client = new Client();
 //
 //        $response = $client->request('POST', $endpoint, ['query' => [
@@ -55,8 +55,10 @@ class test extends Command
 //            'arg1' => '{"abonent__pk":"1"}',
 //        ]);
         //format=json&context=web&model=users&method1=web_cabinet.try_auto_login
+        //curl -XPOST -d 'method1=objects.get&arg1={"login":"BILL0000664"}' http://192.168.200.92:8082/rest_api/v2/Users/ -D -
+
         $client = new Client();
-        $res = $client->post($endpoint, ['format' => 'json', 'context' => 'web', 'model' => 'users', 'method1' => 'web_cabinet.login', 'psw' => '9utydqix', 'arg1' => '{"login":"testlogin","passwd":"testpsw"}']);
+        $res = $client->post($endpoint, ['method1' => 'objects.get&arg1', 'arg1' => '{"login":"BILL0000664"}']);
         echo $res->getStatusCode(); // 200
         echo $res->getBody();
 
