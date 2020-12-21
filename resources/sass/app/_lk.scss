@@ -14,9 +14,8 @@
   justify-content: space-between;
 }
 .lk__content {
-    width: 74%;
-    padding-left: 20px;
-    margin-top: -20px;
+  width: 74%;
+  padding: 0 0 80px 20px;
 }
 .lk__payment-text {
     font-size: 16px;
@@ -24,8 +23,10 @@
     margin-bottom: 20px;
 }
 .lk__block-btn {
-  padding: 16px 20px;
+  padding: 8px 20px;
   width: 100%;
+  margin-top: 27px;
+  line-height: 20px;
 }
 
 .lk {
@@ -38,26 +39,82 @@
   align-items: center;
 }
 .lk__contacts-item {
-  margin-left: 30px;
-  display: flex;
+  margin-right: 60px;
 }
 .lk__contacts-label {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 15px;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
   color: #828282;
+  margin-bottom: 4px;
+}
+.link_phone {
+  text-transform: uppercase;
 }
 .lk__contacts-link {
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #404040;
-    transition: all .1s;
+  font-weight: bold;
+  text-decoration: none;
+  color: #404040;
+  transition: all .1s;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
 
   &:hover {
-    color: #0084D9;
+    color: #9B46C5;
+  }
+}
+.lk__payment-form {
+  max-width: 336px;
+}
+.lk__payment-btn {
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  color: #4F4F4F;
+  padding: 13px;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F1F3F5;
+  border: 1px solid #F2F2F2;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+
+  &:focus {
+    outline: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%), #F1F3F5;
+    border: 1px solid #E1E3E3;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+.lk__promised-offset {
+  margin-top: 46px;
+}
+.lk__personal-info {
+  max-width: 700px;
+  width: 100%;
+}
+.lk__password-reset {
+  max-width: 336px;
+
+  .eye {
+    width: 16px;
+    height: 16px;
+  }
+  .eyes {
+    bottom: 1px;
+    height: 37px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lk__input {
+    padding: 8px 44px 8px 20px;
   }
 }
