@@ -1,20 +1,64 @@
 <template>
-    <div id="auth_form" v-if="showLogin">
-        <form method="post" action="/">
-            <div class="logo"></div>
-            <div class="action">Сессия закончилась</div>
-            <div class="form-group">
-                <input v-model="loginData.phone" v-mask="mask" v-bind:class="{ 'is-invalid': loginData.phoneHasError }" placeholder="Номер телефона" />
-                <div v-if="loginData.phoneHasError" class="invalid-text">{{ phoneInvalidText }}</div>
+    <div class="login-container login-content">
+        <div class="row login-header">
+            <a href="#" class="login-header__link login-header__home" title="На главную">На главную</a>
+            <a href="tel:+74722250911" class="login-header__link login-header__phone">+7 4722 250 911</a>
+        </div>
+
+        <div class="login">
+            <div class="row login_row">
+                <div class="login__left">
+                    <a href="#" class="login__logo">
+                        <img src="/images/logo/logo-big.jpg" alt="" class="login__logo-img">
+                    </a>
+                    <h1 class="login__title">
+                        Личный кабинет
+                    </h1>
+                    <p class="login__title-label">
+                        Высокоскоростной интернет в частный дом
+                    </p>
+                </div>
+                <div class="login__right">
+
+                    <div class="login-form">
+                        <div class="form__group">
+                            <label class="label">Логин</label>
+                            <input @keypress="loginData.loginHasError = false" v-model="loginData.login" v-bind:class="{'is-invalid' : loginData.loginHasError}" type="tel" class="input">
+                            <div v-if="loginData.loginHasError" class="input_err">{{ loginData.errorMess}}</div>
+                        </div>
+                        <div class="form__group p_rel">
+                            <label class="label">Пароль</label>
+                            <input @keypress="loginData.passwordHasError = false" v-model="loginData.password" v-bind:class="{'is-invalid' : loginData.passwordHasError}" type="password" class="input">
+                            <div v-if="loginData.passwordHasError" class="input_err">{{ loginData.errorMess}}</div>
+
+                            <div class="eyes">
+                                <div class="eye eye_closed"></div>
+                                <!--                                    .eye_closed - закрытый глаз-->
+                            </div>
+                        </div>
+
+<!--                        <label class="checkbox inline remember-me">-->
+<!--                            Запомнить меня-->
+<!--                            <input type="checkbox"/>-->
+<!--                            <span class="checkmark"></span>-->
+<!--                        </label>-->
+
+                        <div class="form-group">
+                            <button @click="login()" class="btn_blue login__btn">Войти</button>
+<!--                            <a href="#" class="login__access">Получить доступ</a>-->
+                        </div>
+
+                        <p class="personal-data">
+                            Нажимая кнопку «Войти», Вы принимаете условия
+                            <a href="#" class="personal-data__link" target="_blank" rel="noopener">
+                                пользовательского соглашения и политики конфиденциальности
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
             </div>
-            <div class="form-group">
-                <input v-model="loginData.password" type="password" v-bind:class="{ 'is-invalid': loginData.passwordHasError }" placeholder="Пароль">
-                <div v-if="loginData.passwordHasError" class="invalid-text">{{ passwordInvalidText }}</div>
-            </div>
-            <div class="form-group">
-                <button class="button auth_butt" v-on:click="login">Войти</button>
-            </div>
-        </form>
+        </div>
     </div>
 </template>
 
@@ -24,14 +68,12 @@
         data: ()=> {
             return {
                 showLogin: false,
-                phoneInvalidText: '',
-                passwordInvalidText: '',
-                mask: ['+7', '(', /\d/, /\d/, /\d/, ') ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
                 loginData: {
-                    phone:'',
-                    phoneHasError:false,
+                    login:'',
+                    loginHasError:false,
                     password:'',
                     passwordHasError:false,
+                    errorMess:null
                 }
             }
         },
@@ -42,6 +84,9 @@
             this.$eventBus.$on('NoAuthEvent', ()=>{
                 this.showLogin = true;
             });
+            let suid = localStorage['suid'];
+            if(suid)
+                this.$router.push({ name: 'payment' })
         },
         methods:{
             show(e){
@@ -52,31 +97,30 @@
                 this.showLogin = !token;
             },
             login(e){
-                e.preventDefault();
                 this.loginData.phoneHasError = false;
                 this.loginData.passwordHasError = false;
                 window.axios({
                     method: 'post',
-                    url: '/login',
-                    data: this.loginData
+                    url: '/api/login',
+                    data: this.loginData,
                 }).then((resp) =>  {
-                    if(resp.data.status === 'success' && resp.data.api_token){
-                        this.saveToLocalStorage('api_token', resp.data.api_token);
-                        this.saveToLocalStorage('company_id', resp.data.company_id);
-                        this.saveToLocalStorage('user_pic', resp.data.pic);
-                        this.saveToLocalStorage('user_name', resp.data.name);
-                        this.saveToLocalStorage('user_role', resp.data.role);
-                        this.saveToLocalStorage('user_id', resp.data.id);
-                        this.showLogin = false;
-                        this.$router.go();
+                    if(resp.data.status === 'error'){
+                        this.loginData.loginHasError = true;
+                        this.loginData.passwordHasError = true;
+                        this.loginData.errorMess = resp.data.message;
+                    } else {
+                        console.log(resp.data);
+                        this.saveToLocalStorage('a_home_number', resp.data.a_home_number);
+                        this.saveToLocalStorage('abonent_id', resp.data.abonent_id);
+                        this.saveToLocalStorage('ip', resp.data.ip);
+                        this.saveToLocalStorage('login', resp.data.login);
+                        this.saveToLocalStorage('ostatok', resp.data.ostatok);
+                        this.saveToLocalStorage('sms', resp.data.sms);
+                        this.saveToLocalStorage('suid', resp.data.suid);
+                        this.$router.push({ name: 'payment' })
                     }
                 }).catch((error)=>{
-                    let errors = error.response.data.errors;
-                    Object.entries(errors);
-                    for (const [key, value] of Object.entries(errors)) {
-                        this.loginData[key + 'HasError'] = true;
-                        this[key + 'InvalidText'] = value[0];
-                    }
+
                 });
             }
         }

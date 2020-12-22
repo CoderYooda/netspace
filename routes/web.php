@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::view('/{any?}', 'index')->name('index');
 
 Route::view('/home', 'base')->name('lk');

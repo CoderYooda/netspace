@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="lk__header">
+        <div v-if="isHeader" class="lk__header">
             <div class="container">
                 <div class="row">
                     <a href="/" class="lk__header-logo" title="NetSpace">
@@ -20,9 +20,30 @@
                 </div>
             </div>
         </div>
-        <div class="lk__offset">
-            <component :is="layout" />
-            <!--        <login/>-->
+        <component :is="layout" />
+        <div v-if="isFooter" class="login-container login-footer">
+            <div class="row">
+                <div class="login-footer__copyright">2021 NetSpace</div>
+
+                <div class="login-footer__webstyle">
+                    <a href="https://webstyle.top/prodvizhenie-sajtov"
+                       class="login-footer__webstyle-link"
+                       title="Продвижение сайтов Белгород"
+                       target="_blank"
+                       rel="noopener"
+                    >
+                        Продвижение сайтов
+                    </a>
+                    <a href="https://webstyle.top/"
+                       class="login-footer__webstyle-link"
+                       title="Создание сайтов Белгород"
+                       target="_blank"
+                       rel="noopener"
+                    >
+                        <img src="/images/logo/webstyle_black.png" alt="Создание сайтов Webstyle" class="login-footer__webstyle-img">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -31,27 +52,38 @@
 <script>
     import MainLayout from './layouts/MainLayout'
     import ErrorLayout from './layouts/ErrorLayout'
-    import Login from './auth/Login'
+    import LoginLayout from './layouts/LoginLayout'
     export default {
         data: ()=> {
             return {
             }
         },
         mounted() {
+            this.getShowLoginState();
         },
         created(){
         },
         methods: {
-
+            getShowLoginState(){
+                let suid = localStorage['suid'];
+                if(!suid)
+                    this.$router.push({ name: 'login' })
+            },
         },
         computed: {
+            isFooter(){
+              return this.$route.meta.footer ?? true
+            },
+            isHeader(){
+              return this.$route.meta.header ?? true
+            },
             layout() {
                 return (this.$route.meta.layout || 'main') + '-layout'
             },
         },
         components: {
-            Login,
             MainLayout,
+            LoginLayout,
             ErrorLayout
         }
     }

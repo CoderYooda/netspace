@@ -8,40 +8,46 @@ export default new Router({
     base: '/',
     routes: [
         {
+            path: '/login',
+            name: 'login',
+            meta: {layout: 'login', header:false},
+            component: () => import(/* webpackChunkName: "Login" */ './components/auth/Login.vue'),
+        },
+        {
             path: '/payment',
             name: 'payment',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Home" */ './components/views/Tabs/Payment.vue'),
+            component: () => import(/* webpackChunkName: "Payment" */ './components/views/Tabs/Payment.vue'),
         },
         {
             path: '/payments',
             name: 'payments',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Home" */ './components/views/Tabs/Payments.vue'),
+            component: () => import(/* webpackChunkName: "Payments" */ './components/views/Tabs/Payments.vue'),
         },
         {
             path: '/withdrawal',
             name: 'withdrawal',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Home" */ './components/views/Tabs/Withdrawal.vue'),
+            component: () => import(/* webpackChunkName: "Withdrawal" */ './components/views/Tabs/Withdrawal.vue'),
         },
         {
             path: '/promised',
             name: 'promised',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Home" */ './components/views/Tabs/Promised.vue'),
+            component: () => import(/* webpackChunkName: "Promised" */ './components/views/Tabs/Promised.vue'),
         },
         {
             path: '/personal',
             name: 'personal',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Home" */ './components/views/Tabs/Personal.vue'),
+            component: () => import(/* webpackChunkName: "Personal" */ './components/views/Tabs/Personal.vue'),
         },
         {
             path: '/password',
             name: 'password',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Home" */ './components/views/Tabs/Password.vue'),
+            component: () => import(/* webpackChunkName: "Password" */ './components/views/Tabs/Password.vue'),
         },
         {
             path: '/404',
