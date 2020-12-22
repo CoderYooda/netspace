@@ -6,11 +6,5 @@
     "/js/Home.js": "/js/Home.js",
     "/js/Home.js.map": "/js/Home.js.map",
     "/js/NotFound.js": "/js/NotFound.js",
-    "/js/NotFound.js.map": "/js/NotFound.js.map",
-    "/js/Base.js": "/js/Base.js",
-    "/js/Base.js.map": "/js/Base.js.map",
-    "/js/ProviderStore.js": "/js/ProviderStore.js",
-    "/js/ProviderStore.js.map": "/js/ProviderStore.js.map",
-    "/js/ProviderOrder.js": "/js/ProviderOrder.js",
-    "/js/ProviderOrder.js.map": "/js/ProviderOrder.js.map"
+    "/js/NotFound.js.map": "/js/NotFound.js.map"
 }
