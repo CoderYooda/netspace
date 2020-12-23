@@ -345,6 +345,8 @@
                                          <input type="text" id="pd_patronymic" class="lk__input" disabled>
                                      </div>
                                  </div>
+
+                                 <button class="lk__btn lk__btn-controls">Сохранить</button>
                              </div>
                         </div>
 
@@ -366,7 +368,7 @@
                                     </div>
                                 </div>
 
-                                <div class="lk__input-wrap p_rel">
+                                <div class="lk__input-wrap lk__form-group p_rel">
                                     <label for="pd_confirm_password" class="lk__label">Подтвердить пароль</label>
                                     <input type="password" id="pd_confirm_password" name="confirm_password" class="lk__input">
 
@@ -378,6 +380,8 @@
                                         Ошибка
                                     </div>
                                 </div>
+
+                                <button class="lk__btn lk__btn-controls">Сохранить</button>
                             </div>
                         </div>
 

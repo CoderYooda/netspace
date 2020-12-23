@@ -7,7 +7,7 @@
   font-size: 14px;
   letter-spacing: 0.04em;
   color: #fff;
-  border: none;
+  border: 1px solid #0000;
   cursor: pointer;
 
   &:hover {
@@ -20,4 +20,7 @@
     background: #007BCA;
     filter: drop-shadow(0px 2px 6px rgba(0, 123, 202, 0.25));
   }
+}
+.lk__btn-controls {
+  padding: 13px 42px;
 }
