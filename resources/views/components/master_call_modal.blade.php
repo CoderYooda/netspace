@@ -35,9 +35,10 @@
                             Ошибка
                         </div>
                     </div>
-
-                    <button class="lk__btn btn_disabled" disabled>Отправить сообщение</button>
                 </div>
+
+                <button class="lk__btn btn_disabled" disabled>Отправить сообщение</button>
+
             </div>
 
             <div class="form-success"> {{-- Если письмо отправлено успешно сюда .show --}}

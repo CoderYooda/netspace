@@ -1,4 +1,4 @@
-<div class="modal-mask"> {{-- сюда show --}}
+<div class="modal-mask show"> {{-- сюда show --}}
     <div class="modal">
 
         <div class="modal-body">
@@ -42,8 +42,10 @@
                         <textarea name="message" id="help_message" class="lk__input modal__form-msg" placeholder="Напишите здесь то, что поможет нам понять и решить вашу проблему"></textarea>
                     </div>
 
-                    <button class="lk__btn">Отправить сообщение</button>
                 </div>
+
+                <button class="lk__btn">Отправить сообщение</button>
+
             </div>
 
             <div class="form-success"> {{-- Если письмо отправлено успешно сюда .show --}}
