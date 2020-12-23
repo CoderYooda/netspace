@@ -1,4 +1,4 @@
-<div class="modal-mask show">
+<div class="modal-mask"> {{-- сюда show --}}
     <div class="modal">
 
         <div class="modal-body">

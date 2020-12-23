@@ -17,8 +17,6 @@
 
     <div class="wrapper">
 
-        @include('components.master_call_modal')
-
         <div class="login-bg"></div>
 
         <div class="login-container login-content">

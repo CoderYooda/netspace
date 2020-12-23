@@ -136,6 +136,9 @@
     .lk__tabs-wrap {
         overflow: hidden;
     }
+    .pi_btn {
+        margin-top: 20px;
+    }
     .lk__tabs {
         white-space: nowrap;
         overflow: auto;
@@ -358,6 +361,23 @@
         border-bottom: none;
         width: 60%;
     }
+    .error__404 {
+        font-size: 68px;
+    }
+    .error__title {
+        margin-left: 20px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .error__subtitle {
+        font-size: 16px;
+        line-height: 26px;
+        margin: 10px 0 20px;
+    }
+    .error__text {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -457,6 +477,10 @@
     }
     .webstyle__img {
         margin-left: 10px;
+    }
+    .error__title {
+        font-size: 18px;
+        line-height: 28px;
     }
 }
 
