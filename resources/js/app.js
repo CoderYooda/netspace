@@ -1,6 +1,6 @@
 require('./bootstrap');
 import Vue from 'vue';
-import App from './components/App'
+import App from './Components/App'
 import router from './router';
 
 window.app_version = 1;
