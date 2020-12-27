@@ -109,7 +109,6 @@
                         this.loginData.passwordHasError = true;
                         this.loginData.errorMess = resp.data.message;
                     } else {
-                        console.log(resp.data);
                         this.saveToLocalStorage('a_home_number', resp.data.a_home_number);
                         this.saveToLocalStorage('abonent_id', resp.data.abonent_id);
                         this.saveToLocalStorage('ip', resp.data.ip);
@@ -117,6 +116,18 @@
                         this.saveToLocalStorage('ostatok', resp.data.ostatok);
                         this.saveToLocalStorage('sms', resp.data.sms);
                         this.saveToLocalStorage('suid', resp.data.suid);
+                        this.saveToLocalStorage('name', resp.data.name);
+                        this.saveToLocalStorage('debit', resp.data.debit);
+                        this.saveToLocalStorage('sms', resp.data.sms);
+                        this.saveToLocalStorage('allow_internet', resp.data.allow_internet);
+                        this.saveToLocalStorage('tarif_name', resp.data.tarif_name);
+                        this.saveToLocalStorage('enough_to_date', resp.data.enough_to_date);
+                        this.saveToLocalStorage('days_until', resp.data.days_until);
+                        this.saveToLocalStorage('recomend_pay_sum', parseFloat(resp.data.recomend_pay_sum).toFixed(2));
+                        this.saveToLocalStorage('minimal_pay_sum', parseFloat(resp.data.minimal_pay_sum).toFixed(2));
+                        this.saveToLocalStorage('balance', parseFloat(resp.data.balance).toFixed(2));
+                        this.saveToLocalStorage('promise_pay', parseFloat(resp.data.promise_pay).toFixed(2));
+                        this.saveToLocalStorage('promise_date_end', parseFloat(resp.data.promise_date_end).toFixed(2));
                         this.$router.push({ name: 'payment' })
                     }
                 }).catch((error)=>{

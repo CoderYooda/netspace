@@ -15,7 +15,7 @@
                             <div class="lk__contacts-label">Напишите нам</div>
                             <a href="mailto:" class="lk__contacts-link">net_space@mail.ru</a>
                         </div>
-                        <button class="lk__logout" title="Выйти из личного кабинета"><span class="btn_text_hide">Выйти</span></button>
+                        <button @click="logout()" class="lk__logout" title="Выйти из личного кабинета"><span class="btn_text_hide">Выйти</span></button>
                     </div>
                 </div>
             </div>
@@ -68,6 +68,10 @@
                 let suid = localStorage['suid'];
                 if(!suid)
                     this.$router.push({ name: 'login' })
+            },
+            logout(){
+                this.removeFromLocalStorage('suid');
+                this.getShowLoginState();
             },
         },
         computed: {
