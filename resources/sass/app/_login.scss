@@ -1,3 +1,37 @@
+#auth_form{
+    position: absolute;
+    top: 0;
+    z-index: 10169;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background: #2D76A8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#auth_form form{
+    margin: 0 auto;
+}
+.logo{
+    background: url(/images/logo_bb.svg) center no-repeat;
+    height: 50px;
+}
+.action{
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.auth_butt{
+    background-color: #2d76a8;
+    color: #fff;
+    border: 1px solid #4993c5;
+    border-radius: 3px;
+    margin: 0 auto;
+    display: block;
+}
+
 .login-wrap {
   background: #F1F3F5;
   height: 100%;
