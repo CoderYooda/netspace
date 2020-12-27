@@ -44,7 +44,7 @@
     </div>
 
     <div class="lk__sidebar-footer">
-        <button class="btn lk__payment-btn lk__sidebar-btn">Помощь</button>
-        <button class="btn lk__payment-btn lk__sidebar-btn lk__sidebar-btn-offset">Вызов мастера</button>
+        <button class="btn lk__payment-btn lk__sidebar-btn">Помощь</button> {{-- help_modal --}}
+        <button class="btn lk__payment-btn lk__sidebar-btn lk__sidebar-btn-offset">Вызов мастера</button> {{-- master_call_modal --}}
     </div>
 </div>

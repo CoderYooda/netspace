@@ -21,3 +21,45 @@
     height: 15px;
     letter-spacing: 0.03em;
 }
+
+textarea {
+    font-family: "Open Sans", sans-serif;
+}
+.form-success {
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+}
+.form-success__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.06em;
+    color: #4F4F4F;
+    margin-bottom: 18px;
+}
+.modal-close.hide {
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+}
+.form-success.show {
+    max-height: 300px;
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s;
+}
+.btn_disabled {
+    background: #F2F2F2;
+    border: 1px solid #E0E0E0;
+    color: #BDBDBD;
+
+    &:hover {
+        background: #F2F2F2;
+        border: 1px solid #E0E0E0;
+        color: #BDBDBD;
+        box-shadow: none;
+        filter: none;
+    }
+}

@@ -1,0 +1,37 @@
+.error__404 {
+  font-size: 110px;
+  color: #4F4F4F;
+  display: inline-block;
+}
+.error__title {
+  display: inline-block;
+  margin-left: 32px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 42px;
+  letter-spacing: 0.02em;
+  color: #4F4F4F;
+}
+.error__subtitle {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: #4F4F4F;
+  margin-bottom: 30px;
+}
+.error__text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #4F4F4F;
+  margin-bottom: 20px;
+}
+.error__link {
+  color: #9B46C5;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
