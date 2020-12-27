@@ -6,7 +6,13 @@ Vue.use(Router);
 export default new Router({
     mode: 'history',
     base: '/',
+    redirect: '/payment',
     routes: [
+        {
+            path: '/',
+            name: 'root',
+            redirect: '/payment'
+        },
         {
             path: '/login',
             name: 'login',
@@ -18,6 +24,12 @@ export default new Router({
             name: 'payment',
             meta: {layout: 'main'},
             component: () => import(/* webpackChunkName: "Payment" */ './components/views/Tabs/Payment.vue'),
+        },
+        {
+            path: '/payment_check',
+            name: 'payment_check',
+            meta: {layout: 'main'},
+            component: () => import(/* webpackChunkName: "Payment" */ './components/views/Tabs/PaymentCheck.vue'),
         },
         {
             path: '/payments',
@@ -52,7 +64,7 @@ export default new Router({
         {
             path: '/404',
             name: '404',
-            meta: {layout: 'error', header:false, footer:false},
+            meta: {layout: 'error', header:true, footer:true},
             component: () => import(/* webpackChunkName: "NotFound" */ './components/views/NotFound'),
         }, {
             path: '*',

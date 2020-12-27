@@ -104,11 +104,14 @@
                     url: '/api/login',
                     data: this.loginData,
                 }).then((resp) =>  {
+                    console.log(resp.data);
                     if(resp.data.status === 'error'){
                         this.loginData.loginHasError = true;
                         this.loginData.passwordHasError = true;
                         this.loginData.errorMess = resp.data.message;
                     } else {
+
+
                         this.saveToLocalStorage('a_home_number', resp.data.a_home_number);
                         this.saveToLocalStorage('abonent_id', resp.data.abonent_id);
                         this.saveToLocalStorage('ip', resp.data.ip);
@@ -123,6 +126,7 @@
                         this.saveToLocalStorage('tarif_name', resp.data.tarif_name);
                         this.saveToLocalStorage('enough_to_date', resp.data.enough_to_date);
                         this.saveToLocalStorage('days_until', resp.data.days_until);
+                        this.saveToLocalStorage('pass', resp.data.gen_pwd);
                         this.saveToLocalStorage('recomend_pay_sum', parseFloat(resp.data.recomend_pay_sum).toFixed(2));
                         this.saveToLocalStorage('minimal_pay_sum', parseFloat(resp.data.minimal_pay_sum).toFixed(2));
                         this.saveToLocalStorage('balance', parseFloat(resp.data.balance).toFixed(2));

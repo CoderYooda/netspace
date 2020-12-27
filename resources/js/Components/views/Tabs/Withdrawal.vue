@@ -26,7 +26,7 @@
                 <button @click="getArches()" class="lk__btn lk__block-btn">Отфильтровать</button>
             </div>
         </div>
-        <div class="lk__form-result">
+        <div class="lk__form-result" style="overflow: auto;height: 40vh;">
             <table class="lk__table">
                 <thead>
                 <tr>

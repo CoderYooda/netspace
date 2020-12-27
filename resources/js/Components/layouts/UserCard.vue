@@ -92,6 +92,13 @@
             }
         },
         mounted(){
+            this.$eventBus.$on('fresh', ()=>{
+                this.balance = this.getFromLocalStorage('balance');
+                this.minimal_pay_sum = this.getFromLocalStorage('minimal_pay_sum');
+                this.days_until = this.getFromLocalStorage('days_until');
+            });
+
+
             this.name = this.getFromLocalStorage('name');
             this.login = this.getFromLocalStorage('login');
             this.abonent_id = this.getFromLocalStorage('abonent_id');

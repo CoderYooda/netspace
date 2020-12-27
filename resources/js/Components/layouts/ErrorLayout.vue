@@ -1,5 +1,5 @@
 <template>
-
+    <div class="lk__offset">
         <div class="container">
             <div class="row lk__row">
 
@@ -29,9 +29,9 @@
                         <router-view />
                     </div>
                 </div>
-
             </div>
         </div>
+    </div>
 </template>
 
 <script>

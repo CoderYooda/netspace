@@ -68,6 +68,7 @@ class AuthController extends Controller
         $public_data['ostatok'] = $resp->result->fields->ostatok;
         $public_data['debit'] = $resp->result->fields->debit;
         $public_data['sms'] = $resp->result->fields->sms;
+        $public_data['gen_pwd'] = $resp->result->fields->gen_pwd;
 
         $req = new CarbonApi('Users', 'post');
         $req->arguments = [
@@ -135,5 +136,69 @@ class AuthController extends Controller
 
 
         return $data;
+    }
+
+    public function changePass(Request $request)
+    {
+        if($request['pass'] !== $request['confirm']){
+            return response()->json(['status' => 'error2', 'message' => 'Пароли не совпадают']);
+        }
+        $api = new CarbonApi('Users', 'post');
+        $api->arguments = [
+            'form_params' => [
+                'method1' => 'objects.get',
+                'arg1' => json_encode(['login' => $request['login']]),
+                'method2' => 'check_pass',
+                'arg2' => json_encode(['passwd' => $request['old']])
+            ]
+        ];
+        $response = $api->send();
+        if(isset($response->result) && $response->result){
+            $req = new CarbonApi('Users', 'post');
+            $req->arguments = [
+                'form_params' => [
+                    'method1' => 'objects.get',
+                    'arg1' => json_encode(['login' => $request['login']]),
+                    'method2' => 'set_password',
+                    'arg2' => json_encode(['psw' => $request['pass'], 'dontshow' => false]),
+
+                ]
+            ];
+            $response = $req->send();
+            return response()->json(['status' => 'success', 'message' => 'Пароль Обновлен']);
+        } else {
+            return response()->json(['status' => 'error', 'message' => 'Неверный пароль']);
+        }
+    }
+    public function changePhone(Request $request)
+    {
+        $api = new CarbonApi('Users', 'post');
+        $api->arguments = [
+            'form_params' => [
+                'method1' => 'objects.get',
+                'arg1' => json_encode(['login' => $request['login']]),
+                'method2' => 'check_pass',
+                'arg2' => json_encode(['passwd' => $request['pass']])
+            ]
+        ];
+        $response = $api->send();
+        if (isset($response->result) && $response->result) {
+            $req = new CarbonApi('Users', 'post');
+            $req->arguments = [
+                'form_params' => [
+                    'method1' => 'objects.get',
+                    'arg1' => json_encode(['login' => $request['login']]),
+                    'method2' => 'set',
+                    'arg2' => json_encode(['sms' => $request['phone']]),
+                    'method3' => 'save',
+                    'arg3' => '{}',
+                ]
+            ];
+            $response = $req->send();
+            return response()->json(['status' => 'success', 'message' => 'Данные обновлены']);
+        } else {
+            return response()->json(['status' => 'error', 'message' => 'Неверный пароль']);
+        }
+//        curl -XPOST 'http://<ip>:8082/rest_api/v2/Abonents/' --data 'method1=objects.get&arg1={"id":"45"}&method2=set&arg2={"a_home_number":"3"}&method3=save&arg3={}';
     }
 }

@@ -6,7 +6,7 @@
             <div class="lk__form-l5">
                 <div class="lk__input-wrap lk__form-group">
                     <label for="pd_phone" class="lk__label">Телефон</label>
-                    <input type="tel" id="pd_phone" name="phone" class="lk__input">
+                    <input v-model="sms" type="tel" id="pd_phone" name="phone" class="lk__input">
 
                     <div class="lk__errors">
                         Ошибка
@@ -15,43 +15,72 @@
             </div>
             <div class="lk__form-l5">
                 <div class="lk__input-wrap lk__form-group input_disabled">
-                    <label for="pd_name" class="lk__label">Имя</label>
-                    <input type="text" id="pd_name" name="name" class="lk__input" disabled>
+                    <label for="pd_name" class="lk__label">ФИО</label>
+                    <input v-model="name" type="text" id="pd_name" name="name" class="lk__input" disabled>
                 </div>
             </div>
-            <div class="lk__form-l5">
-                <div class="lk__input-wrap lk__form-group">
-                    <label for="pd_email" class="lk__label">E-mail</label>
-                    <input type="email" id="pd_email" name="email" class="lk__input">
-                </div>
-            </div>
-            <div class="lk__form-l5">
-                <div class="lk__input-wrap lk__form-group input_disabled">
-                    <label for="pd_surname" class="lk__label">Фамилия</label>
-                    <input type="text" id="pd_surname" class="lk__input" disabled>
-                </div>
-            </div>
-            <div class="lk__form-l5">
-                <div class="lk__input-wrap lk__form-group input_disabled">
-                    <label for="pd_address" class="lk__label">Адрес</label>
-                    <input type="text" id="pd_address" name="address" class="lk__input" disabled>
-                </div>
-            </div>
-            <div class="lk__form-l5">
-                <div class="lk__input-wrap input_disabled">
-                    <label for="pd_patronymic" class="lk__label">Отчество</label>
-                    <input type="text" id="pd_patronymic" class="lk__input" disabled>
-                </div>
-            </div>
+<!--            <div class="lk__form-l5">-->
+<!--                <div class="lk__input-wrap lk__form-group">-->
+<!--                    <label for="pd_email" class="lk__label">E-mail</label>-->
+<!--                    <input type="email" id="pd_email" name="email" class="lk__input">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="lk__form-l5">-->
+<!--                <div class="lk__input-wrap lk__form-group input_disabled">-->
+<!--                    <label for="pd_surname" class="lk__label">Фамилия</label>-->
+<!--                    <input type="text" id="pd_surname" class="lk__input" disabled>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="lk__form-l5">-->
+<!--                <div class="lk__input-wrap lk__form-group input_disabled">-->
+<!--                    <label for="pd_address" class="lk__label">Адрес</label>-->
+<!--                    <input type="text" id="pd_address" name="address" class="lk__input" disabled>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="lk__form-l5">-->
+<!--                <div class="lk__input-wrap input_disabled">-->
+<!--                    <label for="pd_patronymic" class="lk__label">Отчество</label>-->
+<!--                    <input type="text" id="pd_patronymic" class="lk__input" disabled>-->
+<!--                </div>-->
+<!--            </div>-->
+            <button @click="savePersonal()" class="lk__btn lk__btn-controls pi_btn">Сохранить</button>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        mounted() {
+        data: ()=> {
+            return {
+                name: null,
+                sms: null,
+
+            }
+        },
+        created(){
+        },
+        mounted(){
+            this.name = this.getFromLocalStorage('name');
+            this.sms = this.getFromLocalStorage('sms');
         },
         methods: {
+            savePersonal(){
+                window.axios({
+                    method: 'post',
+                    url: '/api/change_phone',
+                    data: {
+                        login: this.getFromLocalStorage('login'),
+                        pass: this.getFromLocalStorage('pass'),
+                        phone: this.sms,
+                    },
+                }).then((resp) =>  {
+                    if(resp.data.status === 'success'){
+                        this.saveToLocalStorage('sms', this.sms);
+                    } else {
+                        alert('Произошла ошибка')
+                    }
+                })
+            },
         }
     }
 </script>

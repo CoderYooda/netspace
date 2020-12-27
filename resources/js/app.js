@@ -20,7 +20,7 @@ Vue.prototype.getFromLocalStorage = (key)=>{
 Vue.prototype.removeFromLocalStorage = (key)=>{
     return localStorage.removeItem(key);
 };
-
+Vue.prototype.$eventBus = new Vue();
 let app = new Vue({
     router,
     render: h => h(App)
