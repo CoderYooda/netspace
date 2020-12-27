@@ -104,7 +104,6 @@
                     url: '/api/login',
                     data: this.loginData,
                 }).then((resp) =>  {
-                    console.log(resp.data);
                     if(resp.data.status === 'error'){
                         this.loginData.loginHasError = true;
                         this.loginData.passwordHasError = true;

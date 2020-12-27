@@ -6,7 +6,6 @@ Vue.use(Router);
 export default new Router({
     mode: 'history',
     base: '/',
-    redirect: '/payment',
     routes: [
         {
             path: '/',

@@ -11,6 +11,8 @@
     "/js/Password.js.map": "/js/Password.js.map",
     "/js/Payment.js": "/js/Payment.js",
     "/js/Payment.js.map": "/js/Payment.js.map",
+    "/js/PaymentCheck.js": "/js/PaymentCheck.js",
+    "/js/PaymentCheck.js.map": "/js/PaymentCheck.js.map",
     "/js/Payments.js": "/js/Payments.js",
     "/js/Payments.js.map": "/js/Payments.js.map",
     "/js/Personal.js": "/js/Personal.js",
@@ -20,7 +22,5 @@
     "/js/Withdrawal.js": "/js/Withdrawal.js",
     "/js/Withdrawal.js.map": "/js/Withdrawal.js.map",
     "/js/vendors~Login.js": "/js/vendors~Login.js",
-    "/js/vendors~Login.js.map": "/js/vendors~Login.js.map",
-    "/js/PaymentCheck.js": "/js/PaymentCheck.js",
-    "/js/PaymentCheck.js.map": "/js/PaymentCheck.js.map"
+    "/js/vendors~Login.js.map": "/js/vendors~Login.js.map"
 }
