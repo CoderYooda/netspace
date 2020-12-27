@@ -55,6 +55,7 @@ export default new Router({
             meta: {layout: 'main'},
             component: () => import(/* webpackChunkName: "Personal" */ './components/views/Tabs/Personal.vue'),
         },
+        
         {
             path: '/password',
             name: 'password',
