@@ -17,7 +17,7 @@ export default new Router({
             path: '/login',
             name: 'login',
             meta: {layout: 'login', header:false},
-            component: () => import(/* webpackChunkName: "Login" */ './components/auth/Login.vue'),
+            component: () => import(/* webpackChunkName: "Login" */ '../js/Components/auth/Login'),
         },
         {
             path: '/payment',
@@ -29,7 +29,7 @@ export default new Router({
             path: '/payment_check',
             name: 'payment_check',
             meta: {layout: 'main'},
-            component: () => import(/* webpackChunkName: "Payment" */ './components/views/Tabs/PaymentCheck.vue'),
+            component: () => import(/* webpackChunkName: "PaymentCheck" */ './components/views/Tabs/PaymentCheck.vue'),
         },
         {
             path: '/payments',
@@ -55,7 +55,7 @@ export default new Router({
             meta: {layout: 'main'},
             component: () => import(/* webpackChunkName: "Personal" */ './components/views/Tabs/Personal.vue'),
         },
-        
+
         {
             path: '/password',
             name: 'password',

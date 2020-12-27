@@ -20,5 +20,7 @@
     "/js/Withdrawal.js": "/js/Withdrawal.js",
     "/js/Withdrawal.js.map": "/js/Withdrawal.js.map",
     "/js/vendors~Login.js": "/js/vendors~Login.js",
-    "/js/vendors~Login.js.map": "/js/vendors~Login.js.map"
+    "/js/vendors~Login.js.map": "/js/vendors~Login.js.map",
+    "/js/PaymentCheck.js": "/js/PaymentCheck.js",
+    "/js/PaymentCheck.js.map": "/js/PaymentCheck.js.map"
 }
