@@ -30,6 +30,7 @@
         },
         methods: {
             check(){
+                this.$root.$children[0].loading = true;
                 this.errorMess = null;
                 window.axios({
                     method: 'post',
@@ -47,8 +48,9 @@
                         this.amount = resp.data.Amount;
                         this.$eventBus.$emit('fresh');
                     }
+                    this.$root.$children[0].loading = false;
                 }).catch((error)=>{
-
+                    this.$root.$children[0].loading = false;
                 });
             }
         }

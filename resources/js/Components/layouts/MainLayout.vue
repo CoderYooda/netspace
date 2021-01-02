@@ -30,12 +30,12 @@
 
             </div>
         </div>
-        <div class="modal-mask" v-bind:class="{'show' : call_master}">
+        <div v-if="call_master" class="modal-mask" v-bind:class="{'show' : call_master}">
             <div class="modal">
 
                 <div class="modal-body">
 
-                    <div class="modal__form">
+                    <div class="modal__form" v-if="this.success === null">
 <!--                        Если письмо отправлено успешно сюда .form_hide-->
 
                         <div @click="call_master = !call_master" class="modal-close">&times;</div>
@@ -70,12 +70,12 @@
                             </div>
                         </div>
 
-                        <button class="lk__btn btn_disabled" disabled>Отправить сообщение</button>
+                        <button @click="masterCall()" class="lk__btn">Отправить сообщение</button>
 
                     </div>
 
-                    <div class="form-success">
-<!--                        Если письмо отправлено успешно сюда .show-->
+                    <div class="form-success" v-bind:class="{'show' : this.success}">
+                        <div @click="call_master = !call_master" class="modal-close">&times;</div>
                         <div class="form-success__title">Спасибо за обращение</div>
 
                         <p class="lk__text-style">
@@ -99,8 +99,10 @@
         data: ()=> {
             return {
                 call_master: false,
+                success: null,
                 name: null,
                 sms: null,
+                message: null,
             }
         },
         created(){
@@ -110,7 +112,21 @@
             this.sms = this.getFromLocalStorage('sms');
         },
         methods: {
-
+            masterCall(){
+                this.$root.$children[0].loading = true;
+                window.axios({
+                    method: 'post',
+                    url: '/api/master_call',
+                    data: {
+                        message: this.name + 'вызвал мастера. Телефон абонента: ' + this.sms + '. ID абонента: ' + this.getFromLocalStorage('abonent_id'),
+                    },
+                }).then((resp) => {
+                    this.$root.$children[0].loading = false;
+                    this.success = true;
+                }).catch((error) => {
+                    this.$root.$children[0].loading = false;
+                });
+            }
         },
         components: {
             Menu, UserCard

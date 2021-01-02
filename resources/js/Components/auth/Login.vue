@@ -109,8 +109,6 @@
                         this.loginData.passwordHasError = true;
                         this.loginData.errorMess = resp.data.message;
                     } else {
-
-
                         this.saveToLocalStorage('a_home_number', resp.data.a_home_number);
                         this.saveToLocalStorage('abonent_id', resp.data.abonent_id);
                         this.saveToLocalStorage('ip', resp.data.ip);

@@ -45,6 +45,9 @@
                 </div>
             </div>
         </div>
+        <div class="holder" v-if="loading">
+            <div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
     </div>
 
 </template>
@@ -56,6 +59,7 @@
     export default {
         data: ()=> {
             return {
+                loading:false,
             }
         },
         mounted() {

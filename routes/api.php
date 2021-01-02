@@ -10,6 +10,8 @@ Route::post('/pay_check', 'App\Http\Controllers\Api\AbonentController@getOrderSt
 Route::post('/change_pass', 'App\Http\Controllers\Api\AuthController@changePass')->name('pass.change');
 Route::post('/change_phone', 'App\Http\Controllers\Api\AuthController@changePhone')->name('phone.change');
 
+Route::post('/master_call', 'App\Http\Controllers\Api\AbonentController@masterCall')->name('master.call');
+
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});

@@ -55,6 +55,7 @@
         },
         methods: {
             pay(){
+                this.$root.$children[0].loading = true;
                 if(this.summ > 0) {
                     window.axios({
                         method: 'post',
@@ -69,9 +70,12 @@
                         this.saveToLocalStorage('last_order_id', resp.data.orderId);
                         this.saveToLocalStorage('last_order_link', resp.data.formUrl);
                         window.location.href = resp.data.formUrl;
+                        this.$root.$children[0].loading = false;
                     }).catch((error) => {
-
+                        this.$root.$children[0].loading = false;
                     });
+                } else {
+                    this.$root.$children[0].loading = false;
                 }
             },
         }

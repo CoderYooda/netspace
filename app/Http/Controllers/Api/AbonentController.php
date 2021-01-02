@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Master;
 use Illuminate\Http\Request;
 use App\Http\Services\CarbonApi;
+use Illuminate\Support\Facades\Mail;
 
 class AbonentController extends Controller
 {
@@ -28,6 +30,15 @@ class AbonentController extends Controller
         return response()->json($response->result);
     }
 
+    public function masterCall(Request $request)
+    {
+//        'net_space@mail.ru'
+        $mess = new \stdClass();
+        $mess->mess = $request['message'];
+
+        $bool = Mail::to("net_space@mail.ru")->send(new Master($mess));
+        return $bool;
+    }
 
     public function pay(Request $request){
 
@@ -57,8 +68,6 @@ class AbonentController extends Controller
             $response = json_decode($response, true);
 
             return $response;
-
-
         }
         return false;
     }

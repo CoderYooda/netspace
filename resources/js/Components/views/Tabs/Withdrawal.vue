@@ -115,6 +115,7 @@
 
             },
             getArches(){
+                this.$root.$children[0].loading = true;
                 window.axios({
                     method: 'post',
                     url: '/api/get_arches',
@@ -125,8 +126,9 @@
                     },
                 }).then((resp) =>  {
                     this.items = resp.data;
+                    this.$root.$children[0].loading = false;
                 }).catch((error)=>{
-
+                    this.$root.$children[0].loading = false;
                 });
             },
             date(date){
