@@ -1,0 +1,16 @@
+.contacts__content {
+  max-width: 623px;
+}
+.contacts__link {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.contacts__link_email {
+  &:hover {
+    text-decoration: none;
+  }
+}

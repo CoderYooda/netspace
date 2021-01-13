@@ -1,7 +1,9 @@
 const mix = require('laravel-mix');
 
 mix.js('resources/js/app/app.js', 'public/js');
+mix.js('resources/js/lending/lending.js', 'public/js');
 mix.sass('resources/sass/app/app.scss', 'public/css').options({ processCssUrls: false });
+mix.sass('resources/sass/lending/lending.scss', 'public/css').options({ processCssUrls: false });
 
 
 if (mix.inProduction()) {

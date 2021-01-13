@@ -1,0 +1,29 @@
+.connect__title {
+
+}
+.connect__item {
+  width: calc(50% - 30px);
+  margin: 0 0 60px 30px;
+}
+.connect_row {
+  margin-left: -30px;
+  width: 70%;
+}
+.connect {
+  .button-section {
+    margin-top: 0;
+  }
+}
+
+.connect__line70::before {
+  width: 78px;
+}
+.connect__line101::before {
+  width: 101px;
+}
+.connect__line166::before {
+  width: 166px;
+}
+.connect__line148::before {
+  width: 148px;
+}

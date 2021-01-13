@@ -1,0 +1,45 @@
+.burger {
+    display: inline-block;
+    height: 22px;
+}
+%burgerStyle {
+    background: #fff;
+    height: 2px;
+    margin-left: auto;
+    display: block;
+    margin-bottom: 6px;
+    transition: all .1s;
+    position: relative;
+}
+.burger__line1 {
+    @extend %burgerStyle;
+    width: 24px;
+}
+.burger__line2 {
+    @extend %burgerStyle;
+    visibility: visible;
+    opacity: 1;
+    width: 26px;
+}
+.burger__line3 {
+    @extend %burgerStyle;
+    width: 22px;
+}
+
+
+.burger_active {
+    .burger__line2 {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .burger__line1 {
+        transform: rotate(-45deg);
+        top: 6px;
+        width: 22px;
+    }
+    .burger__line3 {
+        transform: rotate(45deg);
+        top: -10px;
+    }
+}
+

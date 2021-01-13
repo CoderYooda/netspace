@@ -1,0 +1,49 @@
+.input {
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #404040;
+  letter-spacing: 0.06em;
+  padding: 12px 0;
+  border-bottom: 2px solid #DFDFDF;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: #878787;
+  }
+}
+.input_err {
+  position: absolute;
+  font-size: 12px;
+  margin-top: 2px;
+  color: #9d0000;
+  height: 15px;
+  letter-spacing: 0.03em;
+}
+.label {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: #404040;
+}
+.personal-data {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  color: #404040;
+  margin-bottom: 40px;
+}
+.personal-data__link {
+  color: #404040;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+.is-invalid {
+    border-bottom: 2px solid #d40000;
+}

@@ -1,0 +1,51 @@
+.text-style14 {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  margin-bottom: 15px;
+}
+.text-style18 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.06em;
+}
+
+.text-style {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  margin-bottom: 15px;
+}
+
+.text_black {
+  color: #404040;
+}
+.text_white {
+  color: #fff;
+}
+
+.list-style {
+  list-style: none;
+}
+.list-style__dot {
+  padding-left: 40px;
+  position: relative;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-bottom: 15px;
+
+  &::before {
+    content: "";
+    background: url("/images/lending/icons/check-blue.svg") no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+}
