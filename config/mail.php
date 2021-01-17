@@ -42,7 +42,7 @@ return [
                 'address' => env('MAIL_FROM_ADDRESS', 'CoderYooda@yandex.ru'),
                 'name' => env('MAIL_FROM_NAME', 'Netspace'),
             ],
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),//SSL
+            'encryption' => env('MAIL_ENCRYPTION', 'TLS'),//SSL
             'username' => 'CoderYooda@yandex.ru',
             'password' => 'zmzmlgdbqxlqggyy',
             'timeout' => null,

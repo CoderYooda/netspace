@@ -31,7 +31,7 @@ class Master extends Mailable
      */
     public function build()
     {
-        return $this->from('CoderYooda@yandex.ru')
+        return $this->subject('Вызов мастера')->from('CoderYooda@yandex.ru')
             ->view('mail')->with(['mess' => $this->message->mess]);
     }
 }
