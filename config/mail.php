@@ -37,12 +37,12 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'smtp.yandex.ru'),
-            'port' => env('MAIL_PORT', 465),
+            'port' => env('MAIL_PORT', 587),//465
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'CoderYooda@yandex.ru'),
-                'name' => env('MAIL_FROM_NAME', 'Example'),
+                'name' => env('MAIL_FROM_NAME', 'Netspace'),
             ],
-            'encryption' => env('MAIL_ENCRYPTION', 'SSL'),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),//SSL
             'username' => 'CoderYooda@yandex.ru',
             'password' => 'zmzmlgdbqxlqggyy',
             'timeout' => null,
