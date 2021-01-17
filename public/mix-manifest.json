@@ -20,5 +20,7 @@
     "/js/Promised.js": "/js/Promised.js",
     "/js/Promised.js.map": "/js/Promised.js.map",
     "/js/Withdrawal.js": "/js/Withdrawal.js",
-    "/js/Withdrawal.js.map": "/js/Withdrawal.js.map"
+    "/js/Withdrawal.js.map": "/js/Withdrawal.js.map",
+    "/js/Pay.js": "/js/Pay.js",
+    "/js/Pay.js.map": "/js/Pay.js.map"
 }

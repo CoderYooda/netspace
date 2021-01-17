@@ -17,8 +17,8 @@
             </div>
 
             <div class="lk__info-item">
-                <div class="lk__info-name">Сцмма к оплате</div>
-                <div class="lk__info-value ">{{ minimal_pay_sum }} руб.</div>
+                <div class="lk__info-name">Сумма к оплате</div>
+                <div class="lk__info-value ">{{ minimal_pay_sum | format }} руб.</div>
 <!--                lk__info-status active-->
             </div>
 
@@ -30,7 +30,7 @@
 
             <div class="lk__info-item">
                 <div class="lk__info-name">До отключения</div>
-                <div class="lk__info-value">{{ days_until }} дней</div>
+                <div class="lk__info-value">{{ days_until }} дн.</div>
             </div>
 
             <div class="lk__info-item">
@@ -38,14 +38,14 @@
                 <div class="lk__info-value">{{ tarif_name }}</div>
             </div>
 
-            <div class="lk__info-item">
-                <div class="lk__info-name">Мой IP</div>
-                <div class="lk__info-value">{{ ip }}</div>
-            </div>
+<!--            <div class="lk__info-item">-->
+<!--                <div class="lk__info-name">Мой IP</div>-->
+<!--                <div class="lk__info-value">{{ ip }}</div>-->
+<!--            </div>-->
 
             <div class="lk__info-item lk__sidebar-balance">
                 <div class="lk__info-name">Баланс</div>
-                <div class="lk__info-value"><b>{{ balance }} руб.</b></div>
+                <div class="lk__info-value"><b>{{ balance | format }} руб.</b></div>
             </div>
         </div>
     </div>
@@ -67,6 +67,9 @@
                 tarif_name :null,
                 days_until :null,
             }
+        },
+        filters: {
+            format: val => `${val}`.replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 '),
         },
         computed:{
             getName(){

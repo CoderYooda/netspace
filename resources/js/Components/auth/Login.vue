@@ -28,11 +28,11 @@
                         </div>
                         <div class="form__group p_rel">
                             <label class="label">Пароль</label>
-                            <input @keypress="loginData.passwordHasError = false" v-model="loginData.password" v-bind:class="{'is-invalid' : loginData.passwordHasError}" type="password" class="input">
+                            <input @keypress="loginData.passwordHasError = false" v-model="loginData.password" v-bind:class="{'is-invalid' : loginData.passwordHasError}"  v-bind:type="show_new ? 'text' : 'password'"  type="password" class="input">
                             <div v-if="loginData.passwordHasError" class="input_err">{{ loginData.errorMess}}</div>
 
-                            <div class="eyes">
-                                <div class="eye eye_closed"></div>
+                            <div v-on:mouseover="show_new = true" v-on:mouseleave="show_new = false" class="eyes">
+                                <div v-bind:class="{'eye_closed' : !show_new}" class="eye"></div>
                                 <!--                                    .eye_closed - закрытый глаз-->
                             </div>
                         </div>
@@ -68,6 +68,7 @@
         data: ()=> {
             return {
                 showLogin: false,
+                show_new: false,
                 loginData: {
                     login:'',
                     loginHasError:false,

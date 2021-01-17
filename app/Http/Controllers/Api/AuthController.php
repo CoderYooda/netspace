@@ -100,7 +100,7 @@ class AuthController extends Controller
         $response = $req->send();
 //
 //        dd($response->error);
-//        dd($response->result);
+//        dd($response->result->fields->tarif->fields);
 
         $data['name'] = $response->result->fields->name;
         $data['promise_pay'] = $response->result->fields->promise_pay;

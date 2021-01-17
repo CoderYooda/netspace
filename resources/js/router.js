@@ -43,6 +43,12 @@ export default new Router({
             component: () => import(/* webpackChunkName: "Withdrawal" */ './Components/views/Tabs/Withdrawal.vue'),
         },
         {
+            path: '/pay',
+            name: 'pay',
+            meta: {layout: 'main'},
+            component: () => import(/* webpackChunkName: "Pay" */ './Components/views/Tabs/Pay.vue'),
+        },
+        {
             path: '/promised',
             name: 'promised',
             meta: {layout: 'main'},
