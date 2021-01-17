@@ -36,7 +36,8 @@ class AbonentController extends Controller
         $mess = new \stdClass();
         $mess->mess = $request['message'];
 
-        $bool = Mail::to("net_space@mail.ru")->send(new Master($mess));
+        $bool = Mail::to("coderyooda@gmail.com")->send(new Master($mess));
+//        "net_space@mail.ru"
         return $bool;
     }
 
