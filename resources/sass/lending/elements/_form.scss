@@ -1,0 +1,33 @@
+.form__content {
+  margin-top: 30px;
+}
+.form__group {
+  margin-bottom: 30px;
+}
+.form__group_last {
+  margin-bottom: 0;
+}
+
+.form {
+  max-height: 600px;
+  transition: max-height .2s, opacity .5s;
+  opacity: 1;
+}
+
+// ----
+
+.form.form_hide {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.form-success {
+  max-height: 120px;
+  transition: max-height .2s, opacity .5s;
+  opacity: 1;
+}
+.form-success.form-success_hide {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}

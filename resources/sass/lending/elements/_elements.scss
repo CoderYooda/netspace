@@ -1,0 +1,53 @@
+@import "btn";
+@import "link";
+@import "title";
+@import "text-style";
+@import "webstyle";
+@import "icons";
+@import "controls";
+@import "form";
+@import "background";
+@import "burger";
+@import "animations";
+@import "checkbox";
+
+.concept {
+  position: relative;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  line-height: 40px;
+  cursor: pointer;
+}
+.concept__info-mask {
+  position: absolute;
+  top: 40px;
+  right: -30px;
+  padding: 15px;
+  transition: all .2s;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+.concept__info {
+  background: #fff;
+  padding: 24px;
+  border-radius: 6px;
+  position: relative;
+  width: 514px;
+
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    transform: rotate(134deg);
+    display: inline-block;
+    position: absolute;
+    top: -7px;
+    right: 70px;
+  }
+}
+
+// ------
+

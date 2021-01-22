@@ -113,6 +113,7 @@
 }
 .login__left {
   width: 44%;
+    max-height: 100%;
 }
 .login__logo {
   display: inline-block;
@@ -123,6 +124,7 @@
 }
 .login_row {
   width: 100%;
+    max-height: 100%;
 }
 .login__title {
   font-weight: bold;
@@ -140,6 +142,7 @@
 }
 .login__right {
   width: 56%;
+    height: 100%;
 }
 .login-form {
   max-width: 540px;

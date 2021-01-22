@@ -21,6 +21,22 @@ Vue.prototype.removeFromLocalStorage = (key)=>{
     return localStorage.removeItem(key);
 };
 Vue.prototype.$eventBus = new Vue();
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (!!!localStorage['suid']) {
+            next({
+                path: '/login',
+                query: { redirect: to.fullPath }
+            })
+        } else {
+            next()
+        }
+    } else {
+        next() // make sure to always call next()!
+    }
+})
+
 let app = new Vue({
     router,
     render: h => h(App)

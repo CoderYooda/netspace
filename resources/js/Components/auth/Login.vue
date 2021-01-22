@@ -1,7 +1,7 @@
 <template>
     <div class="login-container login-content">
         <div class="row login-header">
-            <a href="#" class="login-header__link login-header__home" title="На главную">На главную</a>
+            <a href="/" class="login-header__link login-header__home" title="На главную">На главную</a>
             <a href="tel:+74722250911" class="login-header__link login-header__phone">+7 4722 250 911</a>
         </div>
 
@@ -18,8 +18,7 @@
                         Высокоскоростной интернет в частный дом
                     </p>
                 </div>
-                <div class="login__right">
-
+                <div class="login__right">-
                     <div class="login-form">
                         <div class="form__group">
                             <label class="label">Логин</label>
@@ -37,25 +36,15 @@
                             </div>
                         </div>
 
-<!--                        <label class="checkbox inline remember-me">-->
-<!--                            Запомнить меня-->
-<!--                            <input type="checkbox"/>-->
-<!--                            <span class="checkmark"></span>-->
-<!--                        </label>-->
-
                         <div class="form-group">
                             <button @click="login()" class="btn_blue login__btn">Войти</button>
-<!--                            <a href="#" class="login__access">Получить доступ</a>-->
                         </div>
 
                         <p class="personal-data">
                             Нажимая кнопку «Войти», Вы принимаете условия
-                            <a href="#" class="personal-data__link" target="_blank" rel="noopener">
-                                пользовательского соглашения и политики конфиденциальности
-                            </a>
+                            <router-link tag="a" class="personal-data__link" to="/personal_data">пользовательского соглашения</router-link>
                         </p>
                     </div>
-
                 </div>
             </div>
         </div>

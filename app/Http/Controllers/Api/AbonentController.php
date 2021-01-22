@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Check;
 use App\Mail\Master;
 use Illuminate\Http\Request;
 use App\Http\Services\CarbonApi;
@@ -39,6 +40,17 @@ class AbonentController extends Controller
         $bool = Mail::to("net_space@mail.ru")->send(new Master($mess));
 //        "net_space@mail.ru"
         return $bool;
+    }
+
+    public function check(Request $request)
+    {
+//        'net_space@mail.ru'
+        $mess = new \stdClass();
+        $mess->mess = $request['name'] . ' запросил консультацию!' . ' Номер для связи: ' . $request['phone'] . ' Населенный пункт: ' . $request['city'];
+
+        $bool = Mail::to("net_space@mail.ru")->send(new Check($mess));
+        return response(['success' => true]);
+//        "net_space@mail.ru"
     }
 
     public function pay(Request $request){

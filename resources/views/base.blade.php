@@ -10,8 +10,7 @@
 
     <title>Личный кабинет</title>
 
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-
+    <link rel="stylesheet" href="/css/app.css" />
 </head>
 <body class="login-wrap lk">
 
@@ -445,7 +444,7 @@
 
 </div>
 
-<script async src="{{ mix('js/app.js') }}"></script>
+<script async src="/js/app.js"></script>
 
 </body>
 

@@ -60,22 +60,24 @@
         data: ()=> {
             return {
                 loading:false,
+                rn:null,
             }
         },
         mounted() {
-            this.getShowLoginState();
         },
         created(){
+            this.getShowLoginState();
         },
         methods: {
-            getShowLoginState(){
-                let suid = localStorage['suid'];
-                if(!suid)
-                    this.$router.push({ name: 'login' })
+            getShowLoginState(route_name = null){
+                // let suid = localStorage['suid'];
+                // if(!suid || this.$route.name === 'PD')
+                //     this.$router.push({ name: 'login' })
             },
             logout(){
                 this.removeFromLocalStorage('suid');
                 this.getShowLoginState();
+                this.$router.push({ name: 'login' })
             },
         },
         computed: {

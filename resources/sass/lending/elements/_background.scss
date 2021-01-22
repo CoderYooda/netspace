@@ -1,0 +1,39 @@
+.company-bg
+{
+  background: linear-gradient(90deg, #000333, rgba(0,255,177,0) 100%),
+  linear-gradient(127deg, #0015da, rgba(0,255,0,0) 100%),
+  linear-gradient(336deg, #2c0074, rgba(60,0,193,0) 70.71%);
+  background-size: 200% 200%;
+  animation: Animation 20s ease-out infinite;
+}
+
+.connect-bg
+{
+  background: linear-gradient(90deg, #002933, rgba(0, 255, 177, 0) 100%),
+  linear-gradient(127deg, #009eda, rgba(0, 255, 0, 0) 100%),
+  linear-gradient(336deg, #005474, rgba(60, 0, 193, 0) 70.71%);
+  background-size: 200% 200%;
+  animation: Animation 20s ease-out infinite;
+}
+
+.tariffs-bg {
+  background: linear-gradient(90deg, #331600, rgba(0, 255, 177, 0) 100%),
+  linear-gradient(127deg, #ff7805, rgba(0, 255, 0, 0) 100%),
+  linear-gradient(336deg, #8e4f01, rgba(60, 0, 193, 0) 70.71%);
+  background-size: 200% 200%;
+  animation: Animation 20s ease-out infinite;
+}
+
+
+
+@keyframes Animation {
+  0% {
+    background-position: 10% 0;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position:10% 0;
+  }
+}
