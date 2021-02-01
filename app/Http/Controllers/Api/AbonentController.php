@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Mail;
 
 class AbonentController extends Controller
 {
-    private static $username = "T3123323783-api";
-    private static $password = "T3123323783";
+    private static $username = "P3123323783-api";//"T3123323783-api";
+    private static $password = "P3123323783-pass";//"T3123323783";
 
     public function getArches(Request $request){
         $api = new CarbonApi('ArchAccountStack', 'post');
@@ -62,7 +62,7 @@ class AbonentController extends Controller
 
         $order_id = $abonent_id . '_' . rand(0,9999999);
 
-        $url = "https://3dsec.sberbank.ru/payment/rest/register.do?amount=".intval($amount)."00&currency=643&language=ru&orderNumber=".$order_id.
+        $url = "https://securepayments.sberbank.ru/payment/rest/register.do?amount=".intval($amount)."00&currency=643&language=ru&orderNumber=".$order_id.
             "&password=".self::$password.
             "&userName=".self::$username.
             "&returnUrl=".$returnUrl.
@@ -82,6 +82,7 @@ class AbonentController extends Controller
 
             return $response;
         }
+        dd($response);
         return false;
     }
 
@@ -92,7 +93,7 @@ class AbonentController extends Controller
         } else {
             touch(public_path() . '/checks/' . $request['order_id'] . '.lock');
             $orderId = $request['order_id'];
-            $url = "https://3dsec.sberbank.ru/payment/rest/getOrderStatus.do?orderId=".$orderId."&language=ru&password=".self::$password."&userName=".self::$username;
+            $url = "https://securepayments.sberbank.ru/payment/rest/getOrderStatus.do?orderId=".$orderId."&language=ru&password=".self::$password."&userName=".self::$username;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

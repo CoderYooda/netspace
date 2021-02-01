@@ -13,7 +13,7 @@
 <!--            </div>-->
 <!--        </div>-->
         <router-link tag="div" class="lk__tab tab" active-class="active" to="/pay">Оплата и возврат</router-link>
-        <router-link tag="div" class="lk__tab tab" active-class="active" to="/promised">Обещанный платеж</router-link>
+<!--        <router-link tag="div" class="lk__tab tab" active-class="active" to="/promised">Обещанный платеж</router-link>-->
         <div class="lk__tab lk__tab_last p_rel">
             <div class="lk__tab-mobile">Настройки</div>
 

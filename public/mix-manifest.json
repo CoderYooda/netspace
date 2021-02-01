@@ -11,6 +11,8 @@
     "/js/Login.js.map": "/js/Login.js.map",
     "/js/NotFound.js": "/js/NotFound.js",
     "/js/NotFound.js.map": "/js/NotFound.js.map",
+    "/js/PD.js": "/js/PD.js",
+    "/js/PD.js.map": "/js/PD.js.map",
     "/js/Password.js": "/js/Password.js",
     "/js/Password.js.map": "/js/Password.js.map",
     "/js/Pay.js": "/js/Pay.js",
@@ -26,7 +28,5 @@
     "/js/Promised.js": "/js/Promised.js",
     "/js/Promised.js.map": "/js/Promised.js.map",
     "/js/Withdrawal.js": "/js/Withdrawal.js",
-    "/js/Withdrawal.js.map": "/js/Withdrawal.js.map",
-    "/js/PD.js": "/js/PD.js",
-    "/js/PD.js.map": "/js/PD.js.map"
+    "/js/Withdrawal.js.map": "/js/Withdrawal.js.map"
 }
