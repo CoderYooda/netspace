@@ -63,7 +63,7 @@
                         data: {
                             amount: this.summ,
                             abonent_id: this.getFromLocalStorage('abonent_id'),
-                            returnUrl: 'http://178.216.79.26:8787/payment_check',
+                            returnUrl: 'http://178.216.79.26:8787/lc/payment_check',
                             failUrl: 'http://178.216.79.26:8787/payment',
                         },
                     }).then((resp) => {
