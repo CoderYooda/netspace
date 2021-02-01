@@ -87,11 +87,11 @@ class AbonentController extends Controller
 
     public function getOrderStatus( Request $request )
     {
-        if (file_exists(public_path() . '/checks/' . $request['order_id'] . '.lock')) {
+        if (file_exists(public_path() . '/checks/' . $request['orderId'] . '.lock')) {
             return response()->json(['ErrorCode' => 90, 'ErrorMessage' => 'По этому чеку баланс уже был начислен!']);
         } else {
-            touch(public_path() . '/checks/' . $request['order_id'] . '.lock');
-            $orderId = $request['order_id'];
+            touch(public_path() . '/checks/' . $request['orderId'] . '.lock');
+            $orderId = $request['orderId'];
             $url = "https://securepayments.sberbank.ru/payment/rest/getOrderStatus.do?orderId=".$orderId."&language=ru&password=".self::$password."&userName=".self::$username;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
