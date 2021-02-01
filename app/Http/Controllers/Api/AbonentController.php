@@ -82,7 +82,6 @@ class AbonentController extends Controller
 
             return $response;
         }
-        dd($response);
         return false;
     }
 
