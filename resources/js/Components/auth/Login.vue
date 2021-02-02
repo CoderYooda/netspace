@@ -22,7 +22,7 @@
                     <div class="login-form">
                         <div class="form__group">
                             <label class="label">Логин</label>
-                            <input @keypress="loginData.loginHasError = false" v-model="loginData.login" v-bind:class="{'is-invalid' : loginData.loginHasError}" type="tel" class="input">
+                            <input @keypress="loginData.loginHasError = false" v-model="loginData.login" v-bind:class="{'is-invalid' : loginData.loginHasError}" type="text" class="input">
                             <div v-if="loginData.loginHasError" class="input_err">{{ loginData.errorMess}}</div>
                         </div>
                         <div class="form__group p_rel">
