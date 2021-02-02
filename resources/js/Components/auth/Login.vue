@@ -18,7 +18,7 @@
                         Высокоскоростной интернет в частный дом
                     </p>
                 </div>
-                <div class="login__right">-
+                <div class="login__right">
                     <div class="login-form">
                         <div class="form__group">
                             <label class="label">Логин</label>
