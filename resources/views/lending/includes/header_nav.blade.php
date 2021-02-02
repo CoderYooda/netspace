@@ -30,4 +30,9 @@
             Контакты
         </a>
     </li>
+    <li class="header__nav-item">
+        <a href="/lc" class="header__nav-link" title="Личный кабинет">
+            Личный кабинет
+        </a>
+    </li>
 </ul>
