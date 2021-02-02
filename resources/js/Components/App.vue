@@ -9,7 +9,7 @@
                     <div class="row lk__contacts">
                         <div class="lk__contacts-item">
                             <div class="lk__contacts-label">Круглосуточно</div>
-                            <a href="tel:+71234567891" class="lk__contacts-link link_phone">+7 47244 250 911</a>
+                            <a href="tel:+74722250911" class="lk__contacts-link link_phone">+7 4722 250 911</a>
                         </div>
                         <div class="lk__contacts-item">
                             <div class="lk__contacts-label">Напишите нам</div>
