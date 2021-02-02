@@ -8,7 +8,7 @@
         <div class="lk__info">
             <div class="lk__info-item">
                 <div class="lk__info-name">Номер счета</div>
-                <div class="lk__info-value">{{ abonent_id }}</div>
+                <div class="lk__info-value">1000{{ abonent_id }}</div>
             </div>
 
             <div class="lk__info-item">
