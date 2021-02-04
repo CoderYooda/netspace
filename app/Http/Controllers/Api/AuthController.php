@@ -93,14 +93,27 @@ class AuthController extends Controller
             'form_params' => [
                 'method1' => 'objects.get',
                 'arg1' => json_encode(['id' => $abonent_id]),
-                'fields' => json_encode(['name', 'promise_pay', 'promise_date_end', 'recomend_pay_sum', 'minimal_pay_sum', 'allow_internet', 'tarif']),
+                'fields' => json_encode([
+                    'name',
+                    'promise_pay',
+                    'promise_date_end',
+                    'recomend_pay_sum',
+                    'minimal_pay_sum',
+                    'allow_internet',
+                    'tarif',
+                    'tarif_id',
+                    //'current_speed',
+                    'recomend_pay_sum_post',
+                    'abon_pay_for_today',
+                    'post_pay_credit'
+                ])
 
             ]
         ];
         $response = $req->send();
-//
-//        dd($response->error);
-//        dd($response->result->fields->tarif->fields);
+        if(isset($response->error)){
+            dd($response->error);
+        }
 
         $data['name'] = $response->result->fields->name;
         $data['promise_pay'] = $response->result->fields->promise_pay;
@@ -109,6 +122,45 @@ class AuthController extends Controller
         $data['minimal_pay_sum'] = $response->result->fields->minimal_pay_sum;
         $data['allow_internet'] = $response->result->fields->allow_internet;
         $data['tarif_name'] = $response->result->fields->tarif->fields->name;
+        $data['own_disabled_cost'] = $response->result->fields->tarif->fields->own_disabled_cost;
+        $data['plan_comment'] = $response->result->fields->tarif->fields->plan_comment;
+
+     //   $data['current_speed'] =            $response->result->fields->current_speed or 0;
+        $data['recomend_pay_sum_post'] =    $response->result->fields->recomend_pay_sum_post;
+        $data['abon_pay_for_today'] =       $response->result->fields->abon_pay_for_today;
+        $data['post_pay_credit'] =          $response->result->fields->post_pay_credit;
+        $data['tarif_id'] =                 $response->result->fields->tarif_id;
+//
+//        $req = new CarbonApi('Tarif', 'post');
+//        $req->arguments = [
+//            'form_params' => [
+//                'method1' => 'objects.get',
+//                'arg1' => json_encode(['id' => $data['tarif_id']])
+//            ]
+//        ];
+//        $response = $req->send();
+//
+//        dd($response->result->fields);
+
+//        $data['enough_to_date'] = $response->result->enough_to_date;
+//        $data['days_until'] = $response->result->days_until;
+//        $data['tarif_name'] = $response->result->fields->tarif->fields->name;
+
+        $req = new CarbonApi('Abonents', 'post');
+        $req->arguments = [
+            'form_params' => [
+                'method1' => 'objects.get',
+                'arg1' => json_encode(['id' => $abonent_id]),
+                'method2' => 'abon_pay_for_month'
+            ]
+        ];
+        $response = $req->send();
+        if(isset($response->error)){
+            dd($response->error);
+        }
+        $data['abon_pay_for_month'] = $response->result;
+
+
 
         $req = new CarbonApi('Abonents', 'post');
         $req->arguments = [

@@ -44,6 +44,10 @@
 <!--            </div>-->
 
             <div class="lk__info-item lk__sidebar-balance">
+                <div class="lk__info-name">Ежемесячный платёж</div>
+                <div class="lk__info-value"><b>{{ abon_pay_for_month | format }} руб.</b></div>
+            </div>
+            <div class="lk__info-item lk__sidebar-balance">
                 <div class="lk__info-name">Баланс</div>
                 <div class="lk__info-value"><b>{{ balance | format }} руб.</b></div>
             </div>
@@ -66,6 +70,7 @@
                 allow_internet :null,
                 tarif_name :null,
                 days_until :null,
+                abon_pay_for_month :null,
             }
         },
         filters: {
@@ -118,6 +123,7 @@
                     this.saveToLocalStorage('balance', parseFloat(resp.data.balance).toFixed(2));
                     this.saveToLocalStorage('promise_pay', parseFloat(resp.data.promise_pay).toFixed(2));
                     this.saveToLocalStorage('promise_date_end', parseFloat(resp.data.promise_date_end).toFixed(2));
+                    this.saveToLocalStorage('abon_pay_for_month', parseFloat(resp.data.abon_pay_for_month).toFixed(2));
 
                     this.name = this.getFromLocalStorage('name');
                     this.login = this.getFromLocalStorage('login');
@@ -129,6 +135,7 @@
                     this.allow_internet  = this.getFromLocalStorage('allow_internet');
                     this.tarif_name  = this.getFromLocalStorage('tarif_name');
                     this.days_until  = this.getFromLocalStorage('days_until');
+                    this.abon_pay_for_month = this.getFromLocalStorage('abon_pay_for_month');
 
                     this.$root.$children[0].loading = false;
                 }).catch((error)=>{
@@ -146,6 +153,7 @@
             this.allow_internet  = this.getFromLocalStorage('allow_internet');
             this.tarif_name  = this.getFromLocalStorage('tarif_name');
             this.days_until  = this.getFromLocalStorage('days_until');
+            this.abon_pay_for_month  = this.getFromLocalStorage('abon_pay_for_month');
         },
     }
 </script>

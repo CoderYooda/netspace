@@ -119,6 +119,15 @@
                         this.saveToLocalStorage('balance', parseFloat(resp.data.balance).toFixed(2));
                         this.saveToLocalStorage('promise_pay', parseFloat(resp.data.promise_pay).toFixed(2));
                         this.saveToLocalStorage('promise_date_end', parseFloat(resp.data.promise_date_end).toFixed(2));
+
+                        this.saveToLocalStorage('plan_comment', resp.data.plan_comment);
+                        this.saveToLocalStorage('own_disabled_cost', resp.data.own_disabled_cost);
+
+                        this.saveToLocalStorage('current_speed', resp.data.current_speed);
+                        this.saveToLocalStorage('recomend_pay_sum_post', resp.data.recomend_pay_sum_post);
+                        this.saveToLocalStorage('abon_pay_for_today', resp.data.abon_pay_for_today);
+                        this.saveToLocalStorage('post_pay_credit', resp.data.post_pay_credit);
+                        this.saveToLocalStorage('abon_pay_for_month', parseFloat(resp.data.abon_pay_for_month).toFixed(2));
                         this.$router.push({ name: 'payment' })
                     }
                 }).catch((error)=>{
