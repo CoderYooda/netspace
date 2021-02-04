@@ -63,8 +63,8 @@
                         data: {
                             amount: this.summ,
                             abonent_id: this.getFromLocalStorage('abonent_id'),
-                            returnUrl: 'http://inetspace.ru/lc/payment_check',
-                            failUrl: 'http://inetspace.ru/payment',
+                            returnUrl: 'https://inetspace.ru/lc/payment_check',
+                            failUrl: 'https://inetspace.ru/payment',
                         },
                     }).then((resp) => {
                         this.saveToLocalStorage('last_order_id', resp.data.orderId);
