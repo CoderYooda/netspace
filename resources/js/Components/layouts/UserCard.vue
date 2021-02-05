@@ -17,7 +17,7 @@
             </div>
 
             <div class="lk__info-item">
-                <div class="lk__info-name">Сумма к оплате</div>
+                <div class="lk__info-name">Минимальный платеж для разблокировки</div>
                 <div class="lk__info-value ">{{ minimal_pay_sum | format }} руб.</div>
 <!--                lk__info-status active-->
             </div>

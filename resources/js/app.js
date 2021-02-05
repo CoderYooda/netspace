@@ -3,6 +3,8 @@ import Vue from 'vue';
 import App from './Components/App'
 import router from './router';
 
+
+
 window.app_version = 1;
 Vue.prototype.$eventBus = new Vue();
 
