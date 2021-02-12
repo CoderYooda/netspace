@@ -143,6 +143,8 @@
                 });
             });
 
+            this.$eventBus.$emit('fresh');
+
             this.name = this.getFromLocalStorage('name');
             this.login = this.getFromLocalStorage('login');
             this.abonent_id  = this.getFromLocalStorage('abonent_id');
