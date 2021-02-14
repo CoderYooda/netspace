@@ -8,7 +8,7 @@
                     </a>
                     <div class="row lk__contacts">
                         <div class="lk__contacts-item">
-                            <div class="lk__contacts-label">Круглосуточно</div>
+                            <div class="lk__contacts-label">С 8 до 20</div>
                             <a href="tel:+74722250911" class="lk__contacts-link link_phone">+7 4722 250 911</a>
                         </div>
                         <div class="lk__contacts-item">
