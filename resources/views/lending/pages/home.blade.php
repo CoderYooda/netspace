@@ -238,7 +238,7 @@
                                 <a href="tel:84722250911" class="contacts__link">
                                     8 4722 250 911
                                 </a>
-                                – С 8 до 20
+                                – С 8:00 до 20:00
                             </li>
                             <li class="list-style__dot email_icon">
                                 <a href="mailto:net_space@mail.ru" class="contacts__link">

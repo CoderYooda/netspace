@@ -13,7 +13,7 @@
                 --}}
 
                 <div class="lk__contacts-item">
-                    <div class="lk__contacts-label">С 8 до 20</div>
+                    <div class="lk__contacts-label">С 8:00 до 20:00</div>
                     <a href="tel:+71234567891" class="lk__contacts-link link_phone">+7 47244 250 911</a>
                 </div>
 
