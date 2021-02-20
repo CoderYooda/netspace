@@ -16,6 +16,7 @@ Vue.prototype.saveToLocalStorage = (key, value, json = true)=>{
 
 Vue.prototype.getFromLocalStorage = (key)=>{
     let val = localStorage[key];
+    console.log(val);
     return (val && val !== "undefined") ? JSON.parse(val) : null;
 };
 
